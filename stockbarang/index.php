@@ -5,11 +5,6 @@ if(empty($_SESSION['username'])){
 }
  ?>
 
-<?php
-
-require_once'../koneksi.php';
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -74,6 +69,7 @@ require_once'../koneksi.php';
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">Stock Barang</h1>
+                        
                         <div class="card mb-4">
                             <div class="card-header">
                                 <!-- Button to Open the Modal -->

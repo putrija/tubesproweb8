@@ -19,12 +19,7 @@ if(!isset($_SESSION)){
         $stock = $_POST['stock'];
 
         $menambahkanketabelstok = mysqli_query($koneksi, "insert into stok (namabarang, deskripsi, stock) values('$namabarang', '$deskripsi', '$stock')");
-        if($menambahkanketabelstok){
-            header('Location: stockbarang/index.php');
-        }else {
-            echo 'Gagal';
-            header('location: stockbarang/index.php');
-        }
+        
     }
 
 ?>

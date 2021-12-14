@@ -137,22 +137,35 @@ if(empty($_SESSION['username'])){
         </div>
         
         <!-- Modal body -->
-        <form action="POST">
+        <form action="POST" novalidate="" action="index.php">
         <div class="modal-body">
-            <input type="text" name="namabarang" placeholder="Nama Barang" class="form-control"> <br>
-            <input type="text" name="deskripsi" placeholder="Deskripsi Barang" class="form-control"> <br>
-            <input type="number" name="stock" placeholder="stock" class="form-control" > <br>
+            <input type="text" name="namabarang" placeholder="Nama Barang" class="form-control" required> <br>
+            <input type="text" name="deskripsi" placeholder="Deskripsi Barang" class="form-control" required> <br>
+            <input type="number" name="stock" placeholder="stock" class="form-control" required> <br>
             <button type="submit" class="btn btn-primary" name="tambahbarangbaru">Submit</button>
         </div>
         </form>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" name="tambahbarangbaru">Submit</button>
-        </div>
-        
       </div>
     </div>
   </div>
+
+    <?php 
+    //menambah barang baru
+    if(isset($_POST['tambahbarangbaru'])){
+        $namabarang = $_POST['namabarang'];
+        $deskripsi = $_POST['deskripsi'];
+        $stock = $_POST['stock'];
+
+        $addtotable = "INSERT INTO stok (namabarang,deskripsi,stock) VALUES ('$namabarang','$deskripsi','$stock')";
+			if($koneksi->query($addtotable)===TRUE){
+				echo "";
+			} else {
+				echo "Terjadi kesalahan:".$sql."<br/>".$koneksi->error;
+			}
+    }
+    ?>
+    
+
+  
 
 </html>

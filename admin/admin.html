@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+</head>
+<body>
+    <div class="page-container">
+        <!-- sidebar menu area start -->
+        <div class="sidebar-menu">
+            <div class="sidebar-header">
+                    <a href="admin.php"><img src="../logo.png" alt="logo" width="100%"></a>
+            </div>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    <nav>
+                        <ul class="metismenu" id="menu">
+							<li class="active"><a href="index.php"><span>Notes</span></a></li>
+                            <li>
+                                <a href="stock.php"><i class="ti-dashboard"></i><span>Stock Barang</span></a>
+                            </li>
+							<li>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout"></i><span>Transaksi Data
+                                    </span></a>
+                                <ul class="collapse">
+                                    <li><a href="masuk.php">Barang Masuk / Kembali</a></li>
+                                    <li><a href="keluar.php">Barang Keluar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="logout.php"><span>Logout</span></a>
+                                
+                            </li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar menu area end -->
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="search-box pull-left">
+                            <form action="#">
+                                <h2>Hi, <?=$_SESSION['user'];?>!</h2>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- profile info & task notification -->
+                    <div class="col-md-6 col-sm-4 clearfix">
+                        <ul class="notification-area pull-right">
+                            <li><h3><div class="date">
+								<script type='text/javascript'>
+						<!--
+						var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+						var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+						var date = new Date();
+						var day = date.getDate();
+						var month = date.getMonth();
+						var thisDay = date.getDay(),
+							thisDay = myDays[thisDay];
+						var yy = date.getYear();
+						var year = (yy < 1000) ? yy + 1900 : yy;
+						document.write(thisDay + ', ' + day + ' ' + months[month] + ' ' + year);		
+						//-->
+						</script></b></div></h3>
+
+						</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- header area end -->
+</body>
+</html>

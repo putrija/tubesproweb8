@@ -467,7 +467,7 @@ mark,
 .blockquote-footer {
   display: block;
   font-size: 80%;
-  color: #6c757d;
+  color: #76b852;
 }
 .blockquote-footer::before {
   content: "— ";
@@ -526,7 +526,7 @@ kbd kbd {
 pre {
   display: block;
   font-size: 87.5%;
-  color: #212529;
+  color: #76b852;
 }
 pre code {
   font-size: inherit;
@@ -1654,7 +1654,7 @@ pre code {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #212529;
+  color: #76b852;
 }
 .table th,
 .table td {
@@ -1699,7 +1699,7 @@ pre code {
 }
 
 .table-hover tbody tr:hover {
-  color: #212529;
+  color: #76b852#76b852;
   background-color: rgba(0, 0, 0, 0.075);
 }
 
@@ -1879,7 +1879,7 @@ pre code {
 
 .table .thead-dark th {
   color: #fff;
-  background-color: #343a40;
+  background-color: #76b852;
   border-color: #454d55;
 }
 .table .thead-light th {
@@ -2425,7 +2425,7 @@ textarea.form-control {
   }
 }
 .btn:hover {
-  color: #212529;
+  color: #76b852;
   text-decoration: none;
 }
 .btn:focus, .btn.focus {
@@ -2445,7 +2445,7 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
+  background-color: gre;
   border-color: #007bff;
 }
 .btn-primary:hover {
@@ -10141,7 +10141,7 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 .sb-topnav.navbar-light #sidebarToggle {
-  color: #212529;
+  color: #212529#008000;
 }
 
 .sb-sidenav {
@@ -10191,7 +10191,7 @@ body {
 }
 
 .sb-sidenav-dark {
-  background-color: #212529;
+  background-color: #76b852;
   color: rgba(255, 255, 255, 0.5);
 }
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
@@ -10216,7 +10216,7 @@ body {
   color: #fff;
 }
 .sb-sidenav-dark .sb-sidenav-footer {
-  background-color: #343a40;
+  background-color: #76b852;
 }
 
 .sb-sidenav-light {

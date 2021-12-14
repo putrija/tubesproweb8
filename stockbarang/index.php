@@ -5,6 +5,12 @@ if(empty($_SESSION['username'])){
 }
  ?>
 
+<?php
+
+require_once'../koneksi.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,7 +26,7 @@ if(empty($_SESSION['username'])){
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Stok Barang Elektronik</a>
+            <a class="navbar-brand" href="index.php">Stok Barang Elektronik</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -137,35 +143,20 @@ if(empty($_SESSION['username'])){
         </div>
         
         <!-- Modal body -->
-        <form action="POST" novalidate="" action="index.php">
+        <form method="POST">
         <div class="modal-body">
-            <input type="text" name="namabarang" placeholder="Nama Barang" class="form-control" required> <br>
-            <input type="text" name="deskripsi" placeholder="Deskripsi Barang" class="form-control" required> <br>
-            <input type="number" name="stock" placeholder="stock" class="form-control" required> <br>
+            <input type="text" name="namabarang" placeholder="Nama Barang" class="form-control" required>
+            <br>
+            <input type="text" name="deskripsi" placeholder="Deskripsi Barang" class="form-control" required>
+            <br>
+            <input type="number" name="stock" placeholder="stock" class="form-control" required>
+            <br>
             <button type="submit" class="btn btn-primary" name="tambahbarangbaru">Submit</button>
         </div>
         </form>
+        
       </div>
     </div>
   </div>
-
-    <?php 
-    //menambah barang baru
-    if(isset($_POST['tambahbarangbaru'])){
-        $namabarang = $_POST['namabarang'];
-        $deskripsi = $_POST['deskripsi'];
-        $stock = $_POST['stock'];
-
-        $addtotable = "INSERT INTO stok (namabarang,deskripsi,stock) VALUES ('$namabarang','$deskripsi','$stock')";
-			if($koneksi->query($addtotable)===TRUE){
-				echo "";
-			} else {
-				echo "Terjadi kesalahan:".$sql."<br/>".$koneksi->error;
-			}
-    }
-    ?>
-    
-
-  
 
 </html>

@@ -12,8 +12,19 @@ if(!isset($_SESSION)){
     //membuat koneksi ke database
     $koneksi = mysqli_connect($host , $user , $pass, $database);
 
-    if($koneksi -> connect_error){
-        die("Koneksi Gagal: " .$koneksi -> connect_error);
+    //menambah barang baru
+    if(isset($_POST['tambahbarangbaru'])){
+        $namabarang = $_POST['namabarang'];
+        $deskripsi = $_POST['deskripsi'];
+        $stock = $_POST['stock'];
+
+        $menambahkanketabelstok = mysqli_query($koneksi, "insert into stok (namabarang, deskripsi, stock) values('$namabarang', '$deskripsi', '$stock')");
+        if($menambahkanketabelstok){
+            header('Location: stockbarang/index.php');
+        }else {
+            echo 'Gagal';
+            header('location: stockbarang/index.php');
+        }
     }
 
 ?>

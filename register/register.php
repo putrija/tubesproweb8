@@ -28,11 +28,7 @@ require_once'../koneksi.php';
 					<input class="text" type="text" name="username" placeholder="username" required="">
 					<input class="text email" type="email" name="email" placeholder="email" required="">
 					<input class="text" type="password" name="password" placeholder="Password" required=""> 
-					<div class="form-group m-0"> <br>
-						<button type="submit" class="btn btn-primary btn-block" name="btnlogin">
-							Register
-						</button>
-					</div>
+					<input class="submit" type="submit" name="btnlogin" placeholder="Register"> 
 				</form>
 				<p>Already have an Account? <a href="../login/login.php"> Login Now!</a></p>
 			</div>

@@ -89,6 +89,8 @@ if(empty($_SESSION['username'])){
                                         <?php 
                                             $ambilsemuadatastock = mysqli_query($koneksi,"select * from masuk m, stok s where s.idbarang = m.idbarang");
                                             while($data=mysqli_fetch_array($ambilsemuadatastock)){
+                                                $idbarangg = $data['idbarang'];
+                                                $idmasuk = $data ['idmasuk'];
                                                 $tanggal= $data['tanggal'];
                                                 $namabarang = $data['namabarang'];
                                                 $kuantitas = $data['kuantitas'];
@@ -128,12 +130,12 @@ if(empty($_SESSION['username'])){
                                                     <div class="modal-body">
                                                         <input type="text" name="namabarang" value="<?=$namabarang;?>" class="form-control" required>
                                                         <br>
-                                                        <input type="text" name="deskripsi" value="<?=$deskripsi;?>" class="form-control" required>
+                                                        <input type="text" name="keterangan" value="<?=$keterangan;?>" class="form-control" required>
                                                         <br>
                                                         <input type="number" name="kuantitas" value="<?=$kuantitas;?>" class="form-control" required>
                                                         <br>
                                                         <input type="hidden" name="idbarangg" value="<?=$idbarangg;?>">
-                                                        <button type="submit" class="btn btn-primary" name="updatebarang">Submit</button>
+                                                        <button type="submit" class="btn btn-primary" name="updatebarangmasuk">Submit</button>
                                                     </div>
                                                     </form>
                                                     
@@ -157,8 +159,9 @@ if(empty($_SESSION['username'])){
                                                     <div class="modal-body">
                                                         Apakah Anda yakin ingin menghapus <?=$namabarang?>?
                                                         <input type="hidden" name="idbarangg" value="<?=$idbarangg;?>">
+                                                        <input type="hidden" name="kty" value="<?=$kuantitas;?>">
                                                         <br> <br>
-                                                        <button type="submit" class="btn btn-danger" name="hapusbarang">Hapus</button>
+                                                        <button type="submit" class="btn btn-danger" name="hapusbarangmasuk">Hapus</button>
                                                     </div>
                                                     </form>
                                                     

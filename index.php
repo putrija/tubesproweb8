@@ -34,8 +34,8 @@
                   </li>
               </ul>
               <ul class="nav-item">
-                <a class="btn btn-dark" href="#" role="button">Register</a>
-                <a class="btn btn-dark" href="#" role="button">Log In</a>
+                <a class="btn btn-dark" href="register/register.html" role="button">Register</a>
+                <a class="btn btn-dark" href="login/login.php" role="button">Log In</a>
               </ul>
             </div>
           </nav>

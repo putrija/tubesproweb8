@@ -22,4 +22,12 @@ if(!isset($_SESSION)){
         
     }
 
+    //menambah barang masuk 
+    if(isset($_POST['barangmasuk'])){
+        $barangnya = $_POST['barangnya'];
+        $penerima = $_POST['penerima'];
+
+        $menambahkanketabelmasuk = mysqli_query($koneksi, "insert into masuk (idbarang, keterangan) values ('$barangnya', '$penerima')");
+    }
+
 ?>

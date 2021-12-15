@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2021 at 05:09 PM
+-- Generation Time: Dec 15, 2021 at 05:07 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -54,7 +54,8 @@ CREATE TABLE `keluar` (
   `idkeluar` int(11) NOT NULL,
   `idbarang` int(11) NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT current_timestamp(),
-  `penerima` varchar(20) NOT NULL
+  `penerima` varchar(20) NOT NULL,
+  `kuantitas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -67,8 +68,16 @@ CREATE TABLE `masuk` (
   `idmasuk` int(11) NOT NULL,
   `idbarang` int(11) NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT current_timestamp(),
-  `keterangan` varchar(20) NOT NULL
+  `keterangan` varchar(20) NOT NULL,
+  `kuantitas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `masuk`
+--
+
+INSERT INTO `masuk` (`idmasuk`, `idbarang`, `tanggal`, `keterangan`, `kuantitas`) VALUES
+(1, 3, '2021-12-15 04:04:27', 'putrija', 0);
 
 -- --------------------------------------------------------
 
@@ -129,7 +138,7 @@ ALTER TABLE `akun`
 -- AUTO_INCREMENT for table `masuk`
 --
 ALTER TABLE `masuk`
-  MODIFY `idmasuk` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idmasuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `stok`

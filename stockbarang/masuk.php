@@ -80,7 +80,7 @@ if(empty($_SESSION['username'])){
                                                 <th>Tanggal</th>
                                                 <th>Nama Barang</th>
                                                 <th>Jumlah Barang</th>
-                                                <th>Pengirim</th>
+                                                <th>Keterangan</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -116,6 +116,7 @@ if(empty($_SESSION['username'])){
                         </div>
                     </div>
                 </main>
+
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
@@ -160,7 +161,7 @@ if(empty($_SESSION['username'])){
             <br>
             <input type="number" name="kuantitas" placeholder="kuantitas" class="form-control" required>
             <br>
-            <input type="text" name="penerima" placeholder="Penerima" class="form-control" required>
+            <input type="text" name="keterangan" placeholder="keterangan" class="form-control" required>
             <br>
             <button type="submit" class="btn btn-primary" name="barangmasuk">Submit</button>
         </div>

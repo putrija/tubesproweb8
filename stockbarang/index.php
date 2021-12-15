@@ -132,6 +132,8 @@ if(empty($_SESSION['username'])){
                                                         <br>
                                                         <input type="text" name="deskripsi" value="<?=$deskripsi;?>" class="form-control" required>
                                                         <br>
+                                                        <input type="number" name="kuantitas" value="<?=$kuantitas;?>" class="form-control" required>
+                                                        <br>
                                                         <input type="hidden" name="idbarangg" value="<?=$idbarangg;?>">
                                                         <button type="submit" class="btn btn-primary" name="updatebarang">Submit</button>
                                                     </div>
@@ -191,6 +193,33 @@ if(empty($_SESSION['username'])){
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/datatables-demo.js"></script>
     </body>
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h4 class="modal-title">Tambah Barang</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <form method="POST">
+                <div class="modal-body">
+                    <input type="text" name="namabarang" placeholder="Nama Barang" class="form-control" required>
+                    <br>
+                    <input type="text" name="deskripsi" placeholder="Deskripsi Barang" class="form-control" required>
+                    <br>
+                    <input type="number" name="stock" placeholder="stock" class="form-control" required>
+                    <br>
+                    <button type="submit" class="btn btn-primary" name="tambahbarangbaru">Submit</button>
+                </div>
+                </form>
+                
+            </div>
+            </div>
+        </div>
 
 
 </html>

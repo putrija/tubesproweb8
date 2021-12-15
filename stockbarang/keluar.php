@@ -69,7 +69,7 @@ if(empty($_SESSION['username'])){
                             <div class="card-header">
                                 <!-- Button to Open the Modal -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                    Tambah barang
+                                    Ambil barang
                                 </button>
                             </div>
                             <div class="card-body">

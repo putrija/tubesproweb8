@@ -37,7 +37,7 @@ if(empty($_SESSION['username'])){
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="../index.php">Logout</a>
+                        <a class="dropdown-item" href="<i class='fas fa-sign-out-alt'></i>../index.php">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -47,7 +47,7 @@ if(empty($_SESSION['username'])){
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Welcome</div>
+                            <div class="sb-sidenav-menu-heading">Menu</div>
                             <a class="nav-link" href="index.php">
                                 Gudang
                             </a>

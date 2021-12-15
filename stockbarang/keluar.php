@@ -20,7 +20,7 @@ if(empty($_SESSION['username'])){
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Stok Barang Produk Apple Inc.</a>
+            <a class="navbar-brand" href="index.html">EightO</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -37,7 +37,7 @@ if(empty($_SESSION['username'])){
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="../login/login.php">Logout</a>
+                        <a class="dropdown-item" href="../index.php">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -47,17 +47,14 @@ if(empty($_SESSION['username'])){
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <div class="sb-sidenav-menu-heading">Welcome</div>
                             <a class="nav-link" href="index.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Gudang
                             </a>
                             <a class="nav-link" href="masuk.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Barang Masuk
                             </a>
                             <a class="nav-link" href="keluar.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Barang Keluar
                             </a>
                         </div>
@@ -80,25 +77,37 @@ if(empty($_SESSION['username'])){
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
+                                                <th>Tanggal</th>
                                                 <th>Nama Barang</th>
-                                                <th>Deskripsi</th>
-                                                <th>Stock</th>
+                                                <th>Jumlah</th>
+                                                <th>Penerima</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>iPhone 13</td>
-                                                <td>Original: iOS 15.0</td>
-                                                <td>500</td>
-                                            </tr>
+                                            
+                                            <?php 
+                                                $ambilsemuadatastock = mysqli_query($koneksi,"select * from keluar k, stok s where s.idbarang = k.idbarang");
+                                                while($data=mysqli_fetch_array($ambilsemuadatastock)){
+                                                    $tanggal= $data['tanggal'];
+                                                    $namabarang = $data['namabarang'];
+                                                    $kuantitas = $data['kuantitas'];
+                                                    $penerima = $data['penerima'];
+                                                
+                                                ?>
+
+                                                <tr>
+                                                    <td><?=$tanggal?></td>
+                                                    <td><?=$namabarang;?></td>
+                                                    <td><?=$kuantitas;?></td>
+                                                    <td><?=$penerima;?></td>
+                                                </tr>
+
+                                                <?php 
+
+                                                };
+                                                
+                                            ?>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -106,18 +115,6 @@ if(empty($_SESSION['username'])){
                         </div>
                     </div>
                 </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2020</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
@@ -144,13 +141,26 @@ if(empty($_SESSION['username'])){
         <!-- Modal body -->
         <form method="POST">
         <div class="modal-body">
-            <input type="text" name="namabarang" placeholder="Nama Barang" class="form-control" required>
+        <select name="barangnya" class="form-control" >
+                <?php 
+                    $ambildata =  mysqli_query($koneksi, "select * from stok");
+                    while($fetcharray = mysqli_fetch_array($ambildata)) {
+                        $namabarangnya = $fetcharray ['namabarang'];
+                        $idbarangnya = $fetcharray ['idbarang'];
+                ?>
+
+                <option value="<?=$idbarangnya;?>"> <?=$namabarangnya;?></option>
+
+                <?php
+                    }
+                ?>
+            </select>
             <br>
-            <input type="text" name="deskripsi" placeholder="Deskripsi Barang" class="form-control" required>
+            <input type="number" name="kuantitas" placeholder="kuantitas" class="form-control" required>
             <br>
-            <input type="number" name="stock" placeholder="stock" class="form-control" required>
+            <input type="text" name="penerima" placeholder="penerima" class="form-control" required>
             <br>
-            <button type="submit" class="btn btn-primary" name="tambahbarangbaru">Submit</button>
+            <button type="submit" class="btn btn-primary" name="barangkeluar">Submit</button>
         </div>
         </form>
         

@@ -80,25 +80,37 @@ if(empty($_SESSION['username'])){
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
+                                                <th>Tanggal</th>
                                                 <th>Nama Barang</th>
-                                                <th>Deskripsi</th>
-                                                <th>Stock</th>
+                                                <th>Jumlah</th>
+                                                <th>Penerima</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>iPhone 13</td>
-                                                <td>Original: iOS 15.0</td>
-                                                <td>500</td>
-                                            </tr>
+                                            
+                                            <?php 
+                                                $ambilsemuadatastock = mysqli_query($koneksi,"select * from keluar k, stok s where s.idbarang = k.idbarang");
+                                                while($data=mysqli_fetch_array($ambilsemuadatastock)){
+                                                    $tanggal= $data['tanggal'];
+                                                    $namabarang = $data['namabarang'];
+                                                    $kuantitas = $data['kuantitas'];
+                                                    $penerima = $data['penerima'];
+                                                
+                                                ?>
+
+                                                <tr>
+                                                    <td><?=$tanggal?></td>
+                                                    <td><?=$namabarang;?></td>
+                                                    <td><?=$kuantitas;?></td>
+                                                    <td><?=$penerima;?></td>
+                                                </tr>
+
+                                                <?php 
+
+                                                };
+                                                
+                                            ?>
+
                                         </tbody>
                                     </table>
                                 </div>

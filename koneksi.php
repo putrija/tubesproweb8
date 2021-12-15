@@ -56,4 +56,22 @@ if(!isset($_SESSION)){
 
     }
 
+    //update barang 
+    if(isset($_POST['updatebarang'])) {
+        $idbarang = $_POST['idbarangg'];
+        $namabarang = $_POST['namabarang'];
+        $deskripsi = $_POST['deskripsi'];
+        
+
+        $update = mysqli_query($koneksi, "update stok set namabarang='$namabarang', deskripsi='$deskripsi' where idbarang='$idbarang'");
+
+    }
+
+    //hapus barang
+    if(isset($_POST['hapusbarang'])) {
+        $idbarang = $_POST['idbarangg'];
+
+        $hapus = mysqli_query($koneksi, "delete from stok where idbarang='$idbarang'");
+    }
+
 ?>

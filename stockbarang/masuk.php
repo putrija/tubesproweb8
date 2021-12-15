@@ -83,7 +83,7 @@ if(empty($_SESSION['username'])){
                                                 <th>Tanggal</th>
                                                 <th>Nama Barang</th>
                                                 <th>Jumlah Barang</th>
-                                                <th>Stock</th>
+                                                <th>Pengirimk</th>
                                             </tr>
                                         </thead>
                                         <tbody>

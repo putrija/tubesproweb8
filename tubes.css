@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Work+Sans:wght@500&display=swap" rel="stylesheet');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.479),rgba(0,0,0,0.75)),url(images/bg1.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.navbar {
+font-size:25px;
+font-family: 'Josefin Sans', sans-serif;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+
+.navbar .navbar-brand {
+    padding-left: 30px;
+}
+
+.content {
+position: relative;
+width: 100%;
+display: inline-table;
+justify-content: space-between;
+align-items:center;
+}
+
+.content .textbox {
+    padding-top: 20px;
+}
+
+.content .textbox .selamat {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: black;
+}
+
+.content .textbox .teks {
+    font-family:'Work Sans', sans-serif;
+    text-align: center;
+    color: black;
+}
+
+.content .imgbox {
+    padding-top: 25px;
+    position: relative;
+    text-align: center;
+}
+
+.content .button {
+    text-align: center;
+}
+
+footer {
+    background: #111;
+    height: auto;
+    width: auto;
+    font-family:'Work Sans', sans-serif;
+    padding-top: 40px;
+    color: #fff;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8 rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p {
+    font-family:'Work Sans', sans-serif;
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.instagram {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3 rem 0;
+}
+.instagram li {
+    margin: 0 10px;
+}
+
+.instagram a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.instagram a i{
+    font-size: 1.1rem;
+    transition: color .4 ease;
+}
+
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: #000;
+    width: auto;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}

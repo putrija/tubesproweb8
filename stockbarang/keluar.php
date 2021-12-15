@@ -93,6 +93,12 @@ if(empty($_SESSION['username'])){
                                                 <td>Edinburgh</td>
                                                 <td>61</td>
                                             </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>iPhone 13</td>
+                                                <td>Original: iOS 15.0</td>
+                                                <td>500</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>

@@ -26,8 +26,17 @@ if(!isset($_SESSION)){
     if(isset($_POST['barangmasuk'])){
         $barangnya = $_POST['barangnya'];
         $penerima = $_POST['penerima'];
+        $kuantitas = $_POST['kuantitas'];
 
-        $menambahkanketabelmasuk = mysqli_query($koneksi, "insert into masuk (idbarang, keterangan) values ('$barangnya', '$penerima')");
+        $cekstoksekarang= mysqli_query($koneksi, "select * from stok where idbarang='$barangnya'");
+        $ambildata = mysqli_fetch_array($cekstoksekarang);
+
+        $stoksekarang = $ambildata['stock'];
+        $penambahanstoksekarangdengankuantitas = $stoksekarang + $kuantitas;
+
+        $menambahkanketabelmasuk = mysqli_query($koneksi, "insert into masuk (idbarang, keterangan, kuantitas) values ('$barangnya', '$penerima', '$kuantitas')");
+        $updatestockmasuk = mysqli_query($koneksi, "update stok set stock='$penambahanstoksekarangdengankuantitas' where idbarang='$barangnya'");
+
     }
 
 ?>

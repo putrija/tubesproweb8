@@ -154,6 +154,8 @@ if(empty($_SESSION['username'])){
                 ?>
             </select>
             <br>
+            <input type="number" name="kuantitas" placeholder="kuantitas" class="form-control" required>
+            <br>
             <input type="text" name="penerima" placeholder="Penerima" class="form-control" required>
             <br>
             <button type="submit" class="btn btn-primary" name="barangmasuk">Submit</button>

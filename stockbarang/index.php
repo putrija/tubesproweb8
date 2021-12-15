@@ -35,9 +35,9 @@ if(empty($_SESSION['username'])){
             <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo "$_SESSION[username]"; ?> </span>
             <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="<i class='fas fa-sign-out-alt'></i>" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="<i class='fas fa-sign-out-alt'></i>/index.php">Logout</a>
+                        <a class="dropdown-item" href="../index.php">Logout</a>
                     </div>
                 </li>
             </ul>

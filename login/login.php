@@ -19,6 +19,7 @@
 				</button>
 			</div>
             <p class="message">Not registered? <a href="../register/register.html">Create an account</a></p>
+            <p class="message">Back to main menu? <a href="../index.php">Back</a></p>
           </form>
         </div>
     </div>

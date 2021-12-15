@@ -144,13 +144,26 @@ if(empty($_SESSION['username'])){
         <!-- Modal body -->
         <form method="POST">
         <div class="modal-body">
-            <input type="text" name="namabarang" placeholder="Nama Barang" class="form-control" required>
+        <select name="barangnya" class="form-control" >
+                <?php 
+                    $ambildata =  mysqli_query($koneksi, "select * from stok");
+                    while($fetcharray = mysqli_fetch_array($ambildata)) {
+                        $namabarangnya = $fetcharray ['namabarang'];
+                        $idbarangnya = $fetcharray ['idbarang'];
+                ?>
+
+                <option value="<?=$idbarangnya;?>"> <?=$namabarangnya;?></option>
+
+                <?php
+                    }
+                ?>
+            </select>
             <br>
-            <input type="text" name="deskripsi" placeholder="Deskripsi Barang" class="form-control" required>
+            <input type="number" name="kuantitas" placeholder="kuantitas" class="form-control" required>
             <br>
-            <input type="number" name="stock" placeholder="stock" class="form-control" required>
+            <input type="text" name="penerima" placeholder="penerima" class="form-control" required>
             <br>
-            <button type="submit" class="btn btn-primary" name="tambahbarangbaru">Submit</button>
+            <button type="submit" class="btn btn-primary" name="barangkeluar">Submit</button>
         </div>
         </form>
         

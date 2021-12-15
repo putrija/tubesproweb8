@@ -69,7 +69,7 @@ if(empty($_SESSION['username'])){
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">Stock Barang</h1>
-                        
+
                         <div class="card mb-4">
                             <div class="card-header">
                                 <!-- Button to Open the Modal -->
@@ -89,12 +89,30 @@ if(empty($_SESSION['username'])){
                                             </tr>
                                         </thead>
                                         <tbody>
+
+                                            <?php 
+                                            $ambilsemuadatastock = mysqli_query($koneksi,"select * from stok");
+                                            while($data=mysqli_fetch_array($ambilsemuadatastock)){
+                                                $i=1;
+                                                $namabarang = $data['namabarang'];
+                                                $deskripsi = $data['deskripsi'];
+                                                $stock = $data['stock'];
+                                            
+                                            ?>
+
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
+                                                <td><?=$i++?></td>
+                                                <td><?=$namabarang;?></td>
+                                                <td><?=$deskripsi;?></td>
+                                                <td><?=$stock;?></td>
                                             </tr>
+
+                                            <?php 
+
+                                            };
+                                            
+                                            ?>
+
                                         </tbody>
                                     </table>
                                 </div>

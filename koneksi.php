@@ -74,4 +74,16 @@ if(!isset($_SESSION)){
         $hapus = mysqli_query($koneksi, "delete from stok where idbarang='$idbarang'");
     }
 
+    //mengubah data barang masuk
+    if(isset($_POST['updatebarangmasuk'])) {
+        $idbarang = $_POST['idbarangg'];
+        $idbarang = $_POST['idbarangg'];
+        $namabarang = $_POST['namabarang'];
+        $kuantitas = $_POST['kuantitas'];
+
+        $lihatstock = mysqli_query($koneksi, "select * from stok where idbarang='$idbarangg'");
+        $stocknya = mysqli_fetch_array($lihatstock);
+        $stockskrg = $stocknya ['stockskrg']
+    }
+
 ?>

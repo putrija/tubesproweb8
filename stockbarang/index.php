@@ -84,7 +84,7 @@ if(empty($_SESSION['username'])){
                              ?>
                             <div class="alert alert-danger alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                <strong>Stok Habis!</strong> Stok <?=$barang?> telah habis.
+                                <strong>Stok Habis!</strong> Stok <?=$barang?> telah habis...
                             </div>
                             <?php 
                                 }

@@ -19,18 +19,17 @@ if(empty($_SESSION['username'])){
 
 <body>
 <div class="container">
-			<h2>Stock Bahan</h2>
+			<h2>Stock Barang</h2>
 			<h4>(Inventory)</h4>
 				<div class="data-tables datatable-dark">
 					
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="export" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
                                                 <th>Nama Barang</th>
                                                 <th>Deskripsi</th>
                                                 <th>Stock</th>
-                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -47,74 +46,11 @@ if(empty($_SESSION['username'])){
                                             ?>
 
                                             <tr>
-                                                <td><?=$i++?></td>
-                                                <td><?=$namabarang;?></td>
-                                                <td><?=$deskripsi;?></td>
-                                                <td><?=$stock;?></td>
-                                                <td> 
-                                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idbarangg?>">
-                                                    Edit
-                                                    </button>
-                                                    <input type="hidden" name="idbarangygmaudihapus" value="<?=$idbarangg;?>">
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idbarangg?>">
-                                                    Delete
-                                                    </button>
-                                                </td>
+                                                <td><?php echo$i++?></td>
+                                                <td><?php echo $namabarang;?></td>
+                                                <td><?php echo$deskripsi;?></td>
+                                                <td><?php echo$stock;?></td>
                                             </tr>
-
-                                            <!-- EDIT Modal -->
-                                            <div class="modal fade" id="edit<?=$idbarangg;?>">
-                                                <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                
-                                                    <!-- Modal Header -->
-                                                    <div class="modal-header">
-                                                    <h4 class="modal-title">Edit Barang</h4>
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    </div>
-                                                    
-                                                    <!-- Modal body -->
-                                                    <form method="POST">
-                                                    <div class="modal-body">
-                                                        <input type="text" name="namabarang" value="<?=$namabarang;?>" class="form-control" required>
-                                                        <br>
-                                                        <input type="text" name="deskripsi" value="<?=$deskripsi;?>" class="form-control" required>
-                                                        <br>
-                                                        <input type="number" name="kuantitas" value="<?=$kuantitas;?>" class="form-control" required>
-                                                        <br>
-                                                        <input type="hidden" name="idbarangg" value="<?=$idbarangg;?>">
-                                                        <button type="submit" class="btn btn-primary" name="updatebarang">Submit</button>
-                                                    </div>
-                                                    </form>
-                                                    
-                                                </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- DELETE Modal -->
-                                            <div class="modal fade" id="delete<?=$idbarangg;?>">
-                                                <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                
-                                                    <!-- Modal Header -->
-                                                    <div class="modal-header">
-                                                    <h4 class="modal-title">Hapus Barang</h4>
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    </div>
-                                                    
-                                                    <!-- Modal body -->
-                                                    <form method="POST">
-                                                    <div class="modal-body">
-                                                        Apakah Anda yakin ingin menghapus <?=$namabarang?>?
-                                                        <input type="hidden" name="idbarangg" value="<?=$idbarangg;?>">
-                                                        <br> <br>
-                                                        <button type="submit" class="btn btn-danger" name="hapusbarang">Hapus</button>
-                                                    </div>
-                                                    </form>
-                                                    
-                                                </div>
-                                                </div>
-                                            </div>
 
                                             <?php 
 
@@ -130,10 +66,10 @@ if(empty($_SESSION['username'])){
 	
 <script>
 $(document).ready(function() {
-    $('#mauexport').DataTable( {
+    $('#export').DataTable( {
         dom: 'Bfrtip',
         buttons: [
-            'copy','csv','excel', 'pdf', 'print'
+            'excel', 'pdf', 'print'
         ]
     } );
 } );

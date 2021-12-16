@@ -49,10 +49,21 @@ if(!isset($_SESSION)){
         $ambildata = mysqli_fetch_array($cekstoksekarang);
 
         $stoksekarang = $ambildata['stock'];
-        $penguranganstoksekarangdengankuantitas = $stoksekarang - $kuantitas;
+        if($stoksekarang>= $kuantitas) {
+            //jika barang cukup
+            $penguranganstoksekarangdengankuantitas = $stoksekarang - $kuantitas;
 
-        $penguranganketabelkeluar = mysqli_query($koneksi, "insert into keluar (idbarang, penerima, kuantitas) values ('$barangnya', '$penerima', '$kuantitas')");
-        $updatestockkeluar = mysqli_query($koneksi, "update stok set stock='$penguranganstoksekarangdengankuantitas' where idbarang='$barangnya'");
+            $penguranganketabelkeluar = mysqli_query($koneksi, "insert into keluar (idbarang, penerima, kuantitas) values ('$barangnya', '$penerima', '$kuantitas')");
+            $updatestockkeluar = mysqli_query($koneksi, "update stok set stock='$penguranganstoksekarangdengankuantitas' where idbarang='$barangnya'");
+        } else {
+            //jika barang tidak cukup
+            echo '
+            <script>
+                alert("Stock saat ini tidak mencukupi");
+                window.location.href="keluar.php";
+            </script>
+            ';
+        }
 
     }
 

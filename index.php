@@ -19,20 +19,6 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">iPhone</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">iPad</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">MacBook</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Watch</a>
-                  </li>
-              </ul>
               <ul class="nav-item">
                 <a class="btn btn-dark" href="register/register.html" role="button">Register</a>
                 <a class="btn btn-dark" href="login/login.php" role="button">Log In</a>

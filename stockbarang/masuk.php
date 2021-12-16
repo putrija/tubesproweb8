@@ -128,9 +128,9 @@ if(empty($_SESSION['username'])){
                                                     <!-- Modal body -->
                                                     <form method="POST">
                                                     <div class="modal-body">
-                                                        <input type="text" name="keterangan" value="<?=$keterangan;?>" class="form-control" placeholder="Pengirim" required>
+                                                        <input type="text" name="keterangan" value="<?=$keterangan;?>" class="form-control" required>
                                                         <br>
-                                                        <input type="number" name="kuantitas" value="<?=$kuantitas;?>" class="form-control" placeholder="Jumlah"  required>
+                                                        <input type="number" name="kuantitas" value="<?=$kuantitas;?>" class="form-control" required>
                                                         <br>
                                                         <input type="hidden" name="idbarangg" value="<?=$idbarangg;?>">
                                                         <input type="hidden" name="idmasuk" value="<?=$idmasuk;?>">
@@ -225,9 +225,9 @@ if(empty($_SESSION['username'])){
                 ?>
             </select>
             <br>
-            <input type="number" name="kuantitas" placeholder="kuantitas" class="form-control" required>
+            <input type="number" name="kuantitas" placeholder="Jumlah" class="form-control" required>
             <br>
-            <input type="text" name="keterangan" placeholder="keterangan" class="form-control" required>
+            <input type="text" name="keterangan" placeholder="Pengirim" class="form-control" required>
             <br>
             <button type="submit" class="btn btn-primary" name="barangmasuk">Submit</button>
         </div>

@@ -97,8 +97,8 @@ if(!isset($_SESSION)){
             $update = mysqli_query($koneksi, "update masuk set kuantitas='$kuantitas', keterangan='$keterangan' where idmasuk='$idmasuk' ");
         } else {
             $selisih = $kuantitasskrg-$kuantitas;
-            $tambahin = $stockskrg + $selisih; 
-            $tambahinstocknya = mysqli_query($koneksi, "update stok set stock ='$tambahin' where idbarang='$idbarang'");
+            $kurangin = $stockskrg - $selisih; 
+            $kurangistocknya = mysqli_query($koneksi, "update stok set stock ='$kurangin' where idbarang='$idbarang'");
             $update = mysqli_query($koneksi, "update masuk set kuantitas='$kuantitas', keterangan='$keterangan' where idmasuk='$idmasuk' ");
         }
     }

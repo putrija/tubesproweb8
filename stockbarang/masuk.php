@@ -80,7 +80,7 @@ if(empty($_SESSION['username'])){
                                                 <th>Tanggal</th>
                                                 <th>Nama Barang</th>
                                                 <th>Jumlah Barang</th>
-                                                <th>Keterangan</th>
+                                                <th>Pengirim</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -128,13 +128,12 @@ if(empty($_SESSION['username'])){
                                                     <!-- Modal body -->
                                                     <form method="POST">
                                                     <div class="modal-body">
-                                                        <input type="text" name="namabarang" value="<?=$namabarang;?>" class="form-control" required>
+                                                        <input type="text" name="keterangan" value="<?=$keterangan;?>" class="form-control" placeholder="Pengirim" required>
                                                         <br>
-                                                        <input type="text" name="keterangan" value="<?=$keterangan;?>" class="form-control" required>
-                                                        <br>
-                                                        <input type="number" name="kuantitas" value="<?=$kuantitas;?>" class="form-control" required>
+                                                        <input type="number" name="kuantitas" value="<?=$kuantitas;?>" class="form-control" placeholder="Jumlah"  required>
                                                         <br>
                                                         <input type="hidden" name="idbarangg" value="<?=$idbarangg;?>">
+                                                        <input type="hidden" name="idmasuk" value="<?=$idmasuk;?>">
                                                         <button type="submit" class="btn btn-primary" name="updatebarangmasuk">Submit</button>
                                                     </div>
                                                     </form>
@@ -159,7 +158,8 @@ if(empty($_SESSION['username'])){
                                                     <div class="modal-body">
                                                         Apakah Anda yakin ingin menghapus <?=$namabarang?>?
                                                         <input type="hidden" name="idbarangg" value="<?=$idbarangg;?>">
-                                                        <input type="hidden" name="kty" value="<?=$kuantitas;?>">
+                                                        <input type="hidden" name="idmasuk" value="<?=$idmasuk;?>">
+                                                        <input type="hidden" name="kuantitas" value="<?=$kuantitas;?>">
                                                         <br> <br>
                                                         <button type="submit" class="btn btn-danger" name="hapusbarangmasuk">Hapus</button>
                                                     </div>

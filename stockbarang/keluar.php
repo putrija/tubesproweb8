@@ -88,6 +88,8 @@ if(empty($_SESSION['username'])){
                                             <?php 
                                                 $ambilsemuadatastock = mysqli_query($koneksi,"select * from keluar k, stok s where s.idbarang = k.idbarang");
                                                 while($data=mysqli_fetch_array($ambilsemuadatastock)){
+                                                    $idbarangg= $data['idbarang'];
+                                                    $idkeluar = $data['idkeluar'];
                                                     $tanggal= $data['tanggal'];
                                                     $namabarang = $data['namabarang'];
                                                     $kuantitas = $data['kuantitas'];
@@ -100,8 +102,72 @@ if(empty($_SESSION['username'])){
                                                     <td><?=$namabarang;?></td>
                                                     <td><?=$kuantitas;?></td>
                                                     <td><?=$penerima;?></td>
-                                                </tr>
+                                                    <td> 
+                                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idkeluar?>">
+                                                    Edit
+                                                    </button>
+                                                    <input type="hidden" name="idbarangygmaudihapus" value="<?=$idbarangg;?>">
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idkeluar?>">
+                                                    Delete
+                                                    </button>
+                                                </td>
+                                            </tr>
 
+                                            <!-- EDIT Modal -->
+                                            <div class="modal fade" id="edit<?=$idkeluar;?>">
+                                                <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                    <h4 class="modal-title">Edit Barang</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    
+                                                    <!-- Modal body -->
+                                                    <form method="POST">
+                                                    <div class="modal-body">
+                                                        <input type="text" name="penerima" value="<?=$penerima;?>" class="form-control"  required>
+                                                        <br>
+                                                        <input type="number" name="kuantitas" value="<?=$kuantitas;?>" class="form-control"  required>
+                                                        <br>
+                                                        <input type="hidden" name="idbarangg" value="<?=$idbarangg;?>">
+                                                        <input type="hidden" name="idkeluar" value="<?=$idkeluar;?>">
+                                                        <button type="submit" class="btn btn-primary" name="updatebarangkeluar">Submit</button>
+                                                    </div>
+                                                    </form>
+                                                    
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- DELETE Modal -->
+                                            <div class="modal fade" id="delete<?=$idkeluar;?>">
+                                                <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                    <h4 class="modal-title">Hapus Barang</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    
+                                                    <!-- Modal body -->
+                                                    <form method="POST">
+                                                    <div class="modal-body">
+                                                        Apakah Anda yakin ingin menghapus <?=$namabarang?>?
+                                                        <input type="hidden" name="idbarangg" value="<?=$idbarangg;?>">
+                                                        <input type="hidden" name="idkeluar" value="<?=$idkeluar;?>">
+                                                        <input type="hidden" name="kuantitas" value="<?=$kuantitas;?>">
+                                                        <br> <br>
+                                                        <button type="submit" class="btn btn-danger" name="hapusbarangkeluar">Hapus</button>
+                                                    </div>
+                                                    </form>
+                                                    
+                                                </div>
+                                                </div>
+                                            </div>
+                                                    
                                                 <?php 
 
                                                 };
@@ -134,7 +200,7 @@ if(empty($_SESSION['username'])){
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Tambah Barang Keluar</h4>
+          <h4 class="modal-title">Ambil Barang</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         

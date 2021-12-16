@@ -104,18 +104,18 @@ if(empty($_SESSION['username'])){
                                                 <td><?=$kuantitas;?></td>
                                                 <td><?=$keterangan;?></td>
                                                 <td> 
-                                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idbarangg?>">
+                                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idmasuk?>">
                                                     Edit
                                                     </button>
                                                     <input type="hidden" name="idbarangygmaudihapus" value="<?=$idbarangg;?>">
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idbarangg?>">
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idmasuk?>">
                                                     Delete
                                                     </button>
                                                 </td>
                                             </tr>
 
                                             <!-- EDIT Modal -->
-                                            <div class="modal fade" id="edit<?=$idbarangg;?>">
+                                            <div class="modal fade" id="edit<?=$idmasuk;?>">
                                                 <div class="modal-dialog">
                                                 <div class="modal-content">
                                                 
@@ -143,7 +143,7 @@ if(empty($_SESSION['username'])){
                                             </div>
 
                                             <!-- DELETE Modal -->
-                                            <div class="modal fade" id="delete<?=$idbarangg;?>">
+                                            <div class="modal fade" id="delete<?=$idmasuk;?>">
                                                 <div class="modal-dialog">
                                                 <div class="modal-content">
                                                 

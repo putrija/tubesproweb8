@@ -83,15 +83,15 @@ if(empty($_SESSION['username'])){
         </div>
         <?php
         if(isset($_POST['ubah'])){
-            $oldPassword = $_POST['oldPassword'];
-            $newPassword = $_POST['newPassword'];
-            $confirmPassword = $_POST['confirmPassword'];
+            $oldPassword = sha1($_POST['oldPassword']);
+            $newPassword = sha1($_POST['newPassword']);
+            $confirmPassword = sha1($_POST['confirmPassword']);
             $username = $_SESSION['username'];
-            $query = mysqli_query($koneksi, "SELECT * FROM akun WHERE username='$username'");
+            $query = mysqli_query($koneksi, "SELECT * FROM akun WHERE username = '$username'");
             $data = mysqli_fetch_array($query);
             if($oldPassword == $data['password']){
                 if($newPassword == $confirmPassword){
-                    $query = mysqli_query($koneksi, "UPDATE akun SET password='$newPassword' WHERE username='$username'");
+                    $query = mysqli_query($koneksi, "UPDATE akun SET password = '$newPassword' WHERE username = '$username'");
                     if($query){
                         echo "<script>alert('Password Berhasil Diubah');</script>";
                         echo "<script>location='index.php';</script>";

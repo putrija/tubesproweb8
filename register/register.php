@@ -1,6 +1,7 @@
 <?php
 
 require_once'../koneksi.php';
+error_reporting(0);
 
 ?>
 
@@ -25,9 +26,10 @@ require_once'../koneksi.php';
 		<div class="main-agileinfo">
 			<div class="agileits-top">
 				<form method="POST" class="my-login-validation" novalidate="" action="register.php">
-					<input class="text" type="text" name="username" placeholder="username" required="">
-					<input class="text email" type="email" name="email" placeholder="email" required="">
-					<input class="text" type="password" name="password" placeholder="Password" required=""> 
+					<input class="text mb-3" type="text" name="username" placeholder="username" required="">
+					<input class="text mb-3 email" type="email" name="email" placeholder="email" required="">
+					<input class="text mb-3" type="password" name="password" placeholder="Password" required=""> 
+					<input class="text mb-3" type="password" name="confirm" placeholder="Confirm Password" required=""> <br>
 					<input class="submit" type="submit" name="btnlogin" placeholder="Register"> 
 				</form>
 				<p>Already have an Account? <a href="../login/login.php"> Login Now!</a></p>
@@ -38,23 +40,26 @@ require_once'../koneksi.php';
 	<?php
 
 	$username = $_POST['username'];
-	$password = $_POST['password'];
+	$password = sha1($_POST['password']);
 	$email = $_POST['email'];
+	$confirm = sha1($_POST['confirm']);
 
-	$pemeriksaan_username = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM akun WHERE username='$_POST[username]' OR email='$_POST[email]' "));
+	if($password == $confirm) {
+		$pemeriksaan_username = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM akun WHERE username='$_POST[username]' OR email='$_POST[email]' "));
 			if ($pemeriksaan_username > 0 ) {
 				echo "<h2> Akun dengan username/email yang sama telah terdaftar, silahkan ubah username/email anda! </h2>";
 			} else{
-				$sql = "INSERT INTO akun (username,password,email) VALUES ('$username','$password','$email')";
+				$sql = "INSERT INTO akun (`username`,`password`,`email`, `level`) VALUES ('$username','$password','$email', 'user')";
 					if($koneksi->query($sql)===TRUE){
 						echo "<h2>Registrasi Akun Anda Berhasil</h2>";
 						echo "selamat";
 					} else {
 						echo "Terjadi kesalahan:".$sql."<br/>".$koneksi->error;
 					}
-				}		
-
-	$koneksi->close();
+				}
+	}else{
+		echo "Terjadi kesalahan";
+	}
 	?>
 
 </body>

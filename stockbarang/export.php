@@ -35,8 +35,8 @@ if(empty($_SESSION['username'])){
                                         <tbody>
 
                                             <?php 
-                                            $ambilsemuadatastock = mysqli_query($koneksi,"select * from stok");
-                                            $i=1;
+                                            $ambilsemuadatastock = mysqli_query($koneksi, "SELECT * FROM stok");
+                                            $i = 1;
                                             while($data=mysqli_fetch_array($ambilsemuadatastock)){
                                                 $namabarang = $data['namabarang'];
                                                 $deskripsi = $data['deskripsi'];
@@ -46,10 +46,10 @@ if(empty($_SESSION['username'])){
                                             ?>
 
                                             <tr>
-                                                <td><?php echo$i++?></td>
+                                                <td><?php echo $i++?></td>
                                                 <td><?php echo $namabarang;?></td>
-                                                <td><?php echo$deskripsi;?></td>
-                                                <td><?php echo$stock;?></td>
+                                                <td><?php echo $deskripsi;?></td>
+                                                <td><?php echo $stock;?></td>
                                             </tr>
 
                                             <?php 

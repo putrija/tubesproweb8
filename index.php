@@ -20,7 +20,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="nav-item">
-                <a class="btn btn-dark" href="register/register.html" role="button">Register</a>
+                <a class="btn btn-dark" href="register/register.php" role="button">Register</a>
                 <a class="btn btn-dark" href="login/login.php" role="button">Log In</a>
               </ul>
             </div>

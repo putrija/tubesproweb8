@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2021 at 04:20 AM
+-- Generation Time: Dec 21, 2021 at 03:18 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -30,23 +30,29 @@ SET time_zone = "+00:00";
 CREATE TABLE `akun` (
   `id` int(20) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `password` text NOT NULL,
-  `level` varchar(5) NOT NULL
+  `level` varchar(5) NOT NULL,
+  `code` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `akun`
 --
 
-INSERT INTO `akun` (`id`, `username`, `email`, `password`, `level`) VALUES
-(2, 'putrija', 'putrija@gmail.com', '28be8bf12ee6a93b0001d1801bc2d1896975e520', 'admin'),
-(3, 'put', 'put@gmail.com', '132aeadf736728a3f874cd17615dda27830e8cbd', 'user'),
-(6, 'putrii', 'putrii@gmail.com', '46383631c172c7362fcb3d7196715a5b4b92b6af', 'user'),
-(7, 'bintang', 'bintang@gmail.com', '1e1166f6d3034379d06cda378b8d8ad708d2afb6', 'user'),
-(8, 'hihihi', 'hihihi@gmail.com', '3085296069762c17b36f0cb5db8110c654b4d669', 'user'),
-(9, 'tubes', 'tubes@gmail.com', '7e37c810a75ab2fcf3cb7d8baacb368268d38e8f', 'user'),
-(11, 'a', 'a', '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8', 'user');
+INSERT INTO `akun` (`id`, `username`, `email`, `password`, `level`, `code`) VALUES
+(2, 'putrija', 'putrija@gmail.com', '8dd79c49d0be6850d0c633f2c2435db2bacbd0cb', 'admin', ''),
+(3, 'put', 'put@gmail.com', '132aeadf736728a3f874cd17615dda27830e8cbd', 'user', ''),
+(6, 'putrii', 'putrii@gmail.com', '46383631c172c7362fcb3d7196715a5b4b92b6af', 'user', ''),
+(7, 'bintang', 'bintang@gmail.com', '1e1166f6d3034379d06cda378b8d8ad708d2afb6', 'user', ''),
+(8, 'hihihi', 'hihihi@gmail.com', '3085296069762c17b36f0cb5db8110c654b4d669', 'user', ''),
+(9, 'tubes', 'tubes@gmail.com', '7e37c810a75ab2fcf3cb7d8baacb368268d38e8f', 'user', ''),
+(11, 'a', 'a', '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8', 'user', ''),
+(14, 'makasih', 'makasih@gmail.com', '52001292f1348b1cebff1b711488e3471c731272', 'user', ''),
+(16, 'marikitacoba', 'marikitacoba@gmail.c', '0eeec8b926e870f701cea577fb9a7b718141746d', 'user', ''),
+(19, 'putriputri', 'putrijamalau23@gmail.com', '38cb4bf4429deb51f5a9a1a541ae135747c5bbf6', 'user', '0'),
+(20, '', '', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'user', ''),
+(21, 'fayadh', 'fayadhfnst@gmail.com', '70793be5c63a22446c916590588e242544e5e960', 'user', '0');
 
 -- --------------------------------------------------------
 
@@ -119,9 +125,7 @@ CREATE TABLE `saran` (
 --
 
 INSERT INTO `saran` (`idsaran`, `iduser`, `isi`) VALUES
-(1, 0, 'hahaha'),
-(2, 0, 'hai'),
-(3, 11, 'dah capek');
+(4, 11, 'minta tolong masukkan barang a');
 
 -- --------------------------------------------------------
 
@@ -141,12 +145,11 @@ CREATE TABLE `stok` (
 --
 
 INSERT INTO `stok` (`idbarang`, `namabarang`, `deskripsi`, `stock`) VALUES
-(14, 'Macbook Pro M1(2020)', 'Mac', 50),
+(14, 'Macbook Pro M1(2020)', 'Mac', 100),
 (15, 'iPhone 13', 'iPhone', 90),
 (16, 'iPhone 13 Pro', 'iPhone', 1),
 (17, 'Apple Watch Series 7', 'Watch', 20),
-(18, 'iPad Pro Generasi 5', 'iPad', 350),
-(19, 'aaa', 'aaa', 3);
+(18, 'iPad Pro Generasi 5', 'iPad', 350);
 
 --
 -- Indexes for dumped tables
@@ -190,7 +193,7 @@ ALTER TABLE `stok`
 -- AUTO_INCREMENT for table `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `keluar`
@@ -208,7 +211,7 @@ ALTER TABLE `masuk`
 -- AUTO_INCREMENT for table `saran`
 --
 ALTER TABLE `saran`
-  MODIFY `idsaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idsaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `stok`

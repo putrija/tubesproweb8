@@ -13,14 +13,14 @@ if(!isset($_SESSION)){
     $koneksi = mysqli_connect($host , $user , $pass, $database);
 
     //menambah barang baru
-    if(isset($_POST['tambahbarangbaru'])){
-        $namabarang = $_POST['namabarang'];
-        $deskripsi = $_POST['deskripsi'];
-        $stock = $_POST['stock'];
+    //if(isset($_POST['tambahbarangbaru'])){
+      //  $namabarang = $_POST['namabarang'];
+        //$deskripsi = $_POST['deskripsi'];
+        //$stock = $_POST['stock'];
 
-        $menambahkanketabelstok = mysqli_query($koneksi, "insert into stok (namabarang, deskripsi, stock) values('$namabarang', '$deskripsi', '$stock')");
+        //$menambahkanketabelstok = mysqli_query($koneksi, "insert into stok (namabarang, deskripsi, stock) values('$namabarang', '$deskripsi', '$stock')");
         
-    }
+    //}
 
     //menambah barang masuk 
     if(isset($_POST['barangmasuk'])){

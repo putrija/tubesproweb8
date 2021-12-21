@@ -8,11 +8,8 @@ if($_SESSION['level'] == 'user'){
 
                         <div class="card mb-4">
                             <div class="card-header">
-                                <!-- Button to Open the Modal -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                    Tambah barang
-                                </button>
-                                <a href="export.php" class="btn btn-info">Export Data</a>
+                                <!-- Button to Open Isi Barang -->
+                                <a href="isibarang.php" class="btn btn-info">Tambah Barang</a>
                             </div>
                             <div class="card-body">
 

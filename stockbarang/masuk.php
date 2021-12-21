@@ -2,7 +2,7 @@
                         <h1 class="mt-4">Barang Masuk</h1>
                         <div class="card mb-4">
                             <div class="card-header">
-                                <!-- Button to Open the Modal -->
+                                <!-- Button to Open Isi Barang -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                                     Tambah barang
                                 </button>

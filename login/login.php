@@ -8,22 +8,26 @@ error_reporting(0);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>welcome</title>
-    <link href="login.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
+    <div class="logo">
+        <img src="images/logo.png" width="150" weight="130">
+    </div>
     <div class="login-page">
         <div class="form">
+            <h2>Masuk</h2>
             <form method="POST" class="my-login-validation" novalidate="">
-            <input type="text" name="username" placeholder="username"/>
-            <input type="password" name="password" placeholder="password"/>
+            <input type="text" name="username" placeholder="Username"/><br/>
+            <input type="password" name="password" placeholder="Password"/>
             <div class="form-group m-0">
 			    <button type="submit" class="btn btn-primary btn-block" name="btnlogin">
 					Login
 				</button>
 			</div>
-            <p class="message">Forgot Password? <a href="forgotpassword/forgot-password.php">click here</a></p>
-            <p class="message">Not registered? <a href="../register/register.php">Create an account</a></p>
-            <p class="message">Back to main menu? <a href="../index.php">Back</a></p>
+            <p class="message">Belum punya akun? <a href="../register/register.php" class="link">Registrasi akun</a></p>
+            <p class="message">Kembali ke halaman utama? <a href="../index.php" class="link">Kembali</a></p>
+            <p class="message"><a href="forgotpassword/forgot-password.php" class="link">Lupa Kata Sandi</a></p>
           </form>
         </div>
     </div>

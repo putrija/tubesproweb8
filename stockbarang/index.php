@@ -10,8 +10,11 @@ if($_SESSION['level'] == 'user'){
     <div class="card-header">
         <!-- Button to Open Isi Barang -->
         <a href="isibarang.php" class="btn btn-info">Tambah Barang</a>
+        <a href="export.php" class="btn btn-info">Export Barang</a>
     </div>
     <div class="card-body">
+
+
 
     <?php 
         $ambildatastock = mysqli_query($koneksi, "select * from stok where stock < 1");

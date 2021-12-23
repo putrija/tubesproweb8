@@ -19,7 +19,7 @@ if(!isset($_SESSION)){
         $keterangan = $_POST['keterangan'];
         $kuantitas = $_POST['kuantitas'];
 
-        $cekstoksekarang= mysqli_query($koneksi, "select * from stok where idbarang='$barangnya'");
+        $cekstoksekarang= mysqli_query($koneksi, "SELECT * FROM stok WHERE idbarang='$barangnya'");
         $ambildata = mysqli_fetch_array($cekstoksekarang);
 
         $stoksekarang = $ambildata['stock'];
@@ -91,15 +91,12 @@ if(!isset($_SESSION)){
     if(isset($_POST['hapusbarang'])) {
         $idbarang = $_POST['idbarangg'];
 
+        $ambil = mysqli_query($koneksi, "select * from stok where idbarang='$idbarang'");
+        $ambildata = mysqli_fetch_array($ambil);
+        $nama = $ambildata['namabarang'];
+        $update = mysqli_query($koneksi, "update barang set jumlah=0 where nama_barang='$nama'");
         $hapus = mysqli_query($koneksi, "delete from stok where idbarang='$idbarang'");
 
-        $idBarang = $_POST['idBarang'];
-
-        $cekstoksekarang_2= mysqli_query($koneksi, "select * from stok where idbarang='$idbarang'");
-        $ambildata_2 = mysqli_fetch_array($cekstoksekarang_2);
-        $stoksekarang_2 = $ambildata_2['stock'];
-        $namabarangsekarang_2 = $ambildata_2['namabarang'];
-        $update_ke_tabel_barang=mysqli_query($koneksi, "update barang set jumlah==0 where nama_barang='$namabarangsekarang_2'");
         
     }
 

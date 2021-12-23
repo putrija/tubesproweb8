@@ -66,5 +66,43 @@ error_reporting(0);
 	}
 	?>
 
+<!-- Validasi -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+
+<script>
+	$(document).ready(function () {
+		$("#basic-form").validate({
+			rules: {
+				username: {
+					required: true,
+					minlength: 5
+				},
+				password: {
+					required: true,
+					minlength: 8
+				},
+				email: {
+					required: true,
+					email: true
+				}
+			},
+			messages: {
+				username: {
+					minlength: "<span style='font-size:14px;'>Username must be at least 5 characters</span>"
+				},
+				password: {
+					required: "<p style='font-size:14px;'>Please enter your password</p>",
+					min: "<span style='font-size:14px;'>Password should be at least 8 character</span>"
+				},
+				email: {
+					email: "<span style='font-size:14px;'>The email should be in the format: abc@domain.tld</span>"
+				}
+			}
+		});
+	});
+</script>
+
 </body>
 </html>

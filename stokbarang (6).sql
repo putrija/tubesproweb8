@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2021 at 03:18 PM
+-- Generation Time: Dec 23, 2021 at 03:51 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -57,6 +57,55 @@ INSERT INTO `akun` (`id`, `username`, `email`, `password`, `level`, `code`) VALU
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `barang`
+--
+
+CREATE TABLE `barang` (
+  `id` int(200) NOT NULL,
+  `id_kategori` int(200) NOT NULL,
+  `nama_barang` varchar(200) NOT NULL,
+  `deskripsi` varchar(200) NOT NULL,
+  `jumlah` int(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `barang`
+--
+
+INSERT INTO `barang` (`id`, `id_kategori`, `nama_barang`, `deskripsi`, `jumlah`) VALUES
+(1, 1, 'iPhone 13 Pro', 'iPhone', 25),
+(2, 1, 'iPhone 13', 'iPhone', 0),
+(3, 2, 'iPad Pro Generasi 5', 'iPad', 0),
+(4, 2, 'iPad Pro Generasi 4', 'iPad', 0),
+(5, 3, 'Apple Watch SE', 'Watch', 0),
+(6, 3, 'Apple Watch Series 7', 'Watch', 0),
+(7, 4, 'MacBook Pro M1 (2020)', 'Mac', 0),
+(8, 4, 'MacBook Air M1 (2020)', 'Mac', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kategori`
+--
+
+CREATE TABLE `kategori` (
+  `id` int(200) NOT NULL,
+  `nama_kategori` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kategori`
+--
+
+INSERT INTO `kategori` (`id`, `nama_kategori`) VALUES
+(1, 'iPhone'),
+(2, 'iPad'),
+(3, 'Watch'),
+(4, 'Mac');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `keluar`
 --
 
@@ -67,20 +116,6 @@ CREATE TABLE `keluar` (
   `penerima` varchar(20) NOT NULL,
   `kuantitas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `keluar`
---
-
-INSERT INTO `keluar` (`idkeluar`, `idbarang`, `tanggal`, `penerima`, `kuantitas`) VALUES
-(15, 11, '2021-12-16 03:59:20', 'putrija', 10),
-(16, 14, '2021-12-16 05:47:09', 'putrija', 100),
-(17, 15, '2021-12-16 05:48:01', 'putri', 200),
-(21, 14, '2021-12-16 08:43:48', 'bintang', 1300),
-(22, 16, '2021-12-16 09:03:23', 'putri', 1000),
-(23, 15, '2021-12-16 09:06:26', 'putri', 10),
-(24, 19, '2021-12-16 15:29:47', 'aa', 2),
-(25, 14, '2021-12-16 19:33:36', 'a', 50);
 
 -- --------------------------------------------------------
 
@@ -95,18 +130,6 @@ CREATE TABLE `masuk` (
   `keterangan` varchar(20) NOT NULL,
   `kuantitas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `masuk`
---
-
-INSERT INTO `masuk` (`idmasuk`, `idbarang`, `tanggal`, `keterangan`, `kuantitas`) VALUES
-(22, 11, '2021-12-16 04:19:32', 'barang baru', 300),
-(27, 13, '2021-12-16 04:57:28', 'putri', 150),
-(33, 14, '2021-12-16 05:43:33', 'putri', 50),
-(34, 14, '2021-12-16 08:41:40', 'putri', 650),
-(35, 19, '2021-12-16 15:29:28', 'aa', 3),
-(36, 14, '2021-12-16 19:33:10', 'a', 100);
 
 -- --------------------------------------------------------
 
@@ -145,11 +168,7 @@ CREATE TABLE `stok` (
 --
 
 INSERT INTO `stok` (`idbarang`, `namabarang`, `deskripsi`, `stock`) VALUES
-(14, 'Macbook Pro M1(2020)', 'Mac', 100),
-(15, 'iPhone 13', 'iPhone', 90),
-(16, 'iPhone 13 Pro', 'iPhone', 1),
-(17, 'Apple Watch Series 7', 'Watch', 20),
-(18, 'iPad Pro Generasi 5', 'iPad', 350);
+(34, 'iPhone 13 Pro', 'iPhone', 25);
 
 --
 -- Indexes for dumped tables
@@ -159,6 +178,18 @@ INSERT INTO `stok` (`idbarang`, `namabarang`, `deskripsi`, `stock`) VALUES
 -- Indexes for table `akun`
 --
 ALTER TABLE `akun`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `barang`
+--
+ALTER TABLE `barang`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kategori`
+--
+ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -196,6 +227,18 @@ ALTER TABLE `akun`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
+-- AUTO_INCREMENT for table `barang`
+--
+ALTER TABLE `barang`
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `kategori`
+--
+ALTER TABLE `kategori`
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `keluar`
 --
 ALTER TABLE `keluar`
@@ -205,7 +248,7 @@ ALTER TABLE `keluar`
 -- AUTO_INCREMENT for table `masuk`
 --
 ALTER TABLE `masuk`
-  MODIFY `idmasuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `idmasuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `saran`
@@ -217,7 +260,7 @@ ALTER TABLE `saran`
 -- AUTO_INCREMENT for table `stok`
 --
 ALTER TABLE `stok`
-  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

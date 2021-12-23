@@ -31,7 +31,7 @@
         <img src="images/apelss.png">
       </div>
       <div class="textbox">
-        <h2 class="selamat">SELAMAT DATANG DI EightO</h2>
+        <h2 class="selamat">SELAMAT DATANG DI Putrija</h2>
         <p class="teks">EightO adalah website gudang barang elektronik bermerk Apple oleh Kelompok 8. </br>Silahkan masuk atau daftarkan akun Anda untuk mengakses stok barang.</p>
         </div>
     </div>

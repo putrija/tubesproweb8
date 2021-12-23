@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Work+Sans:wght@500&display=swap');
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
@@ -102,31 +105,47 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   
   /*-- end reset --*/
   body {
-    background: #6c757d;
-    background-size: cover;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.479),rgba(0,0,0,0.75)),url(images/bg1.jpg);
+    background-size: 100%;
     background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: 'Roboto', sans-serif;
   }
   
   h1 {
+    padding-top: 35px;
     font-size: 3em;
     text-align: center;
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-weight: 100;
     text-transform: capitalize;
     letter-spacing: 4px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
-  
+  p{
+    padding-top: 10px;
+    padding-bottom: none;
+    text-align: center;
+    font-family:'Work Sans', sans-serif;
+  }
+  .logo {
+    position: relative;
+    text-align: center;
+}
+
   /*-- main --*/
   .main-w3layouts {
-    padding: 3em 0 1em;
+    padding: 0px;
   }
   
   .main-agileinfo {
     width: 35%;
     margin: 3em auto;
-    background: rgba(0, 0, 0, 0.18);
+    background: #0f0f0f67;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+    position: relative;
     background-size: cover;
   }
   
@@ -136,22 +155,22 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   
   input[type="text"], input[type="email"], input[type="password"] {
     font-size: 0.9em;
-    color: #fff;
+    color: #00000080;
     font-weight: 100;
     width: 94.5%;
     display: block;
     border: none;
+    border-radius: 7px;
     padding: 0.8em;
     border: solid 1px rgba(255, 255, 255, 0.37);
     -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
     transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #fff 4%);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #fff 4%);
+    background-color: rgba(255, 255, 255, 0.589);
     background-position: -800px 0;
     background-size: 100%;
     background-repeat: no-repeat;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Work Sans', sans-serif;
+    color: #00000080;
   }
   
   input.email {
@@ -176,7 +195,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
   
   ::-webkit-input-placeholder {
-    color: #fff;
+    color: rgba(65, 57, 57, 0.712);
     font-weight: 100;
   }
   
@@ -195,30 +214,27 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
   
   input[type="submit"] {
-    font-size: .9em;
-    color: #fff;
-    background: #6c757d;
+    font-size: 1em;
+    font-family:'Work Sans', sans-serif;
+    color: rgb(65, 57, 57);
+    background-color:rgba(255, 255, 255, 0.589);
     outline: none;
-    border: 1px solid #6c757d;
+    border-radius: 10px;
+    border: 0px;
     cursor: pointer;
     padding: 0.9em;
     -webkit-appearance: none;
-    width: 100%;
+    width: 95%;
     margin: 2em 0;
-    letter-spacing: 4px;
   }
   
   input[type="submit"]:hover {
-    -webkit-transition: .5s all;
-    -moz-transition: .5s all;
-    -o-transition: .5s all;
-    -ms-transition: .5s all;
-    transition: .5s all;
-    background: #6c757d;
+    background: #ffffff;
   }
   
   .agileits-top p {
     font-size: 1em;
+    font-family:'Work Sans', sans-serif;
     color: #fff;
     text-align: center;
     letter-spacing: 1px;
@@ -226,15 +242,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
   
   .agileits-top p a {
-    color: #fff;
-    -webkit-transition: .5s all;
-    -moz-transition: .5s all;
-    transition: .5s all;
+    color: rgb(199, 199, 199);
+    font-family:'Work Sans', sans-serif;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    transition: 0.5s all;
     font-weight: 400;
   }
   
   .agileits-top p a:hover {
-    color: #6c757d;
+    color: #000000;
   }
   
   /*-- //main --*/

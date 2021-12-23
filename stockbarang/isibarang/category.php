@@ -13,6 +13,7 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title"><?= $pecah['nama_barang']; ?></h5>
+                        <img src="../img/<?php echo $pecah['image']; ?>" width="100%" alt="gambar">
                         <button class="btn btn-primary" data-toggle="modal" data-target="#tambahBarangModal" data-title="<?= $pecah['nama_barang'];?>"  data-idbarang="<?= $pecah['id']; ?>" data-deskripsi="<?= $pecah['deskripsi'];?>">Tambah</button>
                     </div>
                 </div>

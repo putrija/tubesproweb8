@@ -21,7 +21,7 @@ if($_SESSION['level'] == 'user'){
         while($fetch = mysqli_fetch_array($ambildatastock)) {
             $barang = $fetch['namabarang'];
         
-        ?>
+    ?>
     <div class="alert alert-danger alert-dismissible">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <strong>Stok Habis!</strong> Stok <?=$barang?> telah habis...
@@ -38,6 +38,7 @@ if($_SESSION['level'] == 'user'){
                     <th>No</th>
                     <th>Nama Barang</th>
                     <th>Deskripsi</th>
+                    <th>Gambar</th>
                     <th>Stock</th>
                     <th></th>
                 </tr>
@@ -50,6 +51,7 @@ if($_SESSION['level'] == 'user'){
                 while($data=mysqli_fetch_array($ambilsemuadatastock)){
                     $namabarang = $data['namabarang'];
                     $deskripsi = $data['deskripsi'];
+                    $image = $data['image'];
                     $stock = $data['stock'];
                     $idbarangg = $data['idbarang'];
                 
@@ -59,6 +61,7 @@ if($_SESSION['level'] == 'user'){
                     <td><?=$i++?></td>
                     <td><?=$namabarang;?></td>
                     <td><?=$deskripsi;?></td>
+                    <td><?=$image;?></td>
                     <td><?=$stock;?></td>
                     <td> 
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idbarangg?>">

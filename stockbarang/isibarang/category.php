@@ -13,7 +13,7 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title"><?= $pecah['nama_barang']; ?></h5>
-                        <img src="../img/<?php echo $pecah['image']; ?>" width="100%" alt="gambar">
+                        <img src="../img/<?php echo $pecah['image']; ?>" height="200px" alt="gambar">
                         <button class="btn btn-primary" data-toggle="modal" data-target="#tambahBarangModal" data-title="<?= $pecah['nama_barang'];?>"  data-idbarang="<?= $pecah['id']; ?>" data-deskripsi="<?= $pecah['deskripsi'];?>">Tambah</button>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
                 </div>
             </form>

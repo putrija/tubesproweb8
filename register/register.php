@@ -20,20 +20,16 @@ error_reporting(0);
 <!-- //web font -->
 </head>
 <body>
-	<div class="logo">
-        <img src="images/logo.png" width="150" weight="130">
-    </div>
 	<!-- main -->
 	<div class="main-w3layouts wrapper">
+		<h1>Registrasi</h1>
 		<div class="main-agileinfo">
-		<h1>Registration</h1>
-		<p class="pls">Silahkan isi data berikut untuk membuat akun</p>
 			<div class="agileits-top">
-				<form method="POST" class="my-login-validation" novalidate="" action="register.php">
-					<input class="text mb-3" type="text" name="username" placeholder="Username" required="">
-					<input class="text mb-3 email" type="email" name="email" placeholder="Email" required="">
-					<input class="text mb-3" type="password" name="password" placeholder="Password" required=""><br/>
-					<input class="text mb-3" type="password" name="confirm" placeholder="Confirm Password" required="">
+				<form id="basic-form" method="POST" class="my-login-validation" novalidate="" action="register.php">
+					<input class="text mb-3" type="text" name="username" placeholder="username" required="">
+					<input class="text mb-3 email" type="email" name="email" placeholder="email" required="">
+					<input class="text mb-3" type="password" name="password" placeholder="Password" required=""> 
+					<input class="text mb-3" type="password" name="confirm" placeholder="Confirm Password" required=""> <br>
 					<input class="submit" type="submit" name="btnlogin" placeholder="Register"> 
 				</form>
 				<p>Already have an Account? <a href="../login/login.php"> Login Now!</a></p>
@@ -66,43 +62,42 @@ error_reporting(0);
 	}
 	?>
 
-<!-- Validasi -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+	<!-- Validasi -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    
 
-
-<script>
-	$(document).ready(function () {
-		$("#basic-form").validate({
-			rules: {
-				username: {
-					required: true,
-					minlength: 5
-				},
-				password: {
-					required: true,
-					minlength: 8
-				},
-				email: {
-					required: true,
-					email: true
-				}
-			},
-			messages: {
-				username: {
-					minlength: "<span style='font-size:14px;'>Username must be at least 5 characters</span>"
-				},
-				password: {
-					required: "<p style='font-size:14px;'>Please enter your password</p>",
-					min: "<span style='font-size:14px;'>Password should be at least 8 character</span>"
-				},
-				email: {
-					email: "<span style='font-size:14px;'>The email should be in the format: abc@domain.tld</span>"
-				}
-			}
-		});
-	});
-</script>
-
+    <script>
+        $(document).ready(function () {
+            $("#basic-form").validate({
+                rules: {
+                    username: {
+                        required: true,
+                        minlength: 5
+                    },
+                    password: {
+                        required: true,
+                        minlength: 8
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    }
+                },
+                messages: {
+                    username: {
+                        minlength: "<span style='font-size:14px;'>Username must be at least 5 characters</span>"
+                    },
+                    password: {
+                        required: "<p style='font-size:14px;'>Please enter your password</p>",
+                        min: "<span style='font-size:14px;'>Password should be at least 8 character</span>"
+                    },
+                    email: {
+                        email: "<span style='font-size:14px;'>The email should be in the format: abc@domain.tld</span>"
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

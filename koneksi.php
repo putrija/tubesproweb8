@@ -12,15 +12,6 @@ if(!isset($_SESSION)){
     //membuat koneksi ke database
     $koneksi = mysqli_connect($host , $user , $pass, $database);
 
-    //menambah barang baru
-    //if(isset($_POST['tambahbarangbaru'])){
-      //  $namabarang = $_POST['namabarang'];
-        //$deskripsi = $_POST['deskripsi'];
-        //$stock = $_POST['stock'];
-
-        //$menambahkanketabelstok = mysqli_query($koneksi, "insert into stok (namabarang, deskripsi, stock) values('$namabarang', '$deskripsi', '$stock')");
-        
-    //}
 
     //menambah barang masuk 
     if(isset($_POST['barangmasuk'])){
@@ -36,6 +27,14 @@ if(!isset($_SESSION)){
 
         $menambahkanketabelmasuk = mysqli_query($koneksi, "insert into masuk (idbarang, keterangan, kuantitas) values ('$barangnya', '$keterangan', '$kuantitas')");
         $updatestockmasuk = mysqli_query($koneksi, "update stok set stock='$penambahanstoksekarangdengankuantitas' where idbarang='$barangnya'");
+
+        $idBarang = $_POST['idBarang'];
+
+        $cekstoksekarang_2= mysqli_query($koneksi, "select * from stok where idbarang='$barangnya'");
+        $ambildata_2 = mysqli_fetch_array($cekstoksekarang_2);
+        $stoksekarang_2 = $ambildata_2['stock'];
+        $namabarangsekarang_2 = $ambildata_2['namabarang'];
+        $update_ke_tabel_barang=mysqli_query($koneksi, "update barang set jumlah='$stoksekarang_2' where nama_barang='$namabarangsekarang_2'");
 
     }
 
@@ -55,6 +54,15 @@ if(!isset($_SESSION)){
 
             $penguranganketabelkeluar = mysqli_query($koneksi, "insert into keluar (idbarang, penerima, kuantitas) values ('$barangnya', '$penerima', '$kuantitas')");
             $updatestockkeluar = mysqli_query($koneksi, "update stok set stock='$penguranganstoksekarangdengankuantitas' where idbarang='$barangnya'");
+
+            $idBarang = $_POST['idBarang'];
+
+            $cekstoksekarang_2= mysqli_query($koneksi, "select * from stok where idbarang='$barangnya'");
+            $ambildata_2 = mysqli_fetch_array($cekstoksekarang_2);
+            $stoksekarang_2 = $ambildata_2['stock'];
+            $namabarangsekarang_2 = $ambildata_2['namabarang'];
+            $update_ke_tabel_barang=mysqli_query($koneksi, "update barang set jumlah='$stoksekarang_2' where nama_barang='$namabarangsekarang_2'");
+            
         } else {
             //jika barang tidak cukup
             echo '
@@ -84,6 +92,15 @@ if(!isset($_SESSION)){
         $idbarang = $_POST['idbarangg'];
 
         $hapus = mysqli_query($koneksi, "delete from stok where idbarang='$idbarang'");
+
+        $idBarang = $_POST['idBarang'];
+
+        $cekstoksekarang_2= mysqli_query($koneksi, "select * from stok where idbarang='$idbarang'");
+        $ambildata_2 = mysqli_fetch_array($cekstoksekarang_2);
+        $stoksekarang_2 = $ambildata_2['stock'];
+        $namabarangsekarang_2 = $ambildata_2['namabarang'];
+        $update_ke_tabel_barang=mysqli_query($koneksi, "update barang set jumlah==0 where nama_barang='$namabarangsekarang_2'");
+        
     }
 
     //mengubah data barang masuk

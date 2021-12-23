@@ -13,9 +13,7 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title"><?= $pecah['nama_barang']; ?></h5>
-                        <h5 class="card-title"><?= $pecah['deskripsi']; ?></h5>
-                        <h5 class="card-title"><?= $pecah['jumlah']; ?></h5>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahBarangModal" data-title="<?= $pecah['nama_barang'];?> data-deskripsi="<?= $pecah['deskripsi']; ?> data-idbarang="<?= $pecah['id']; ?>">Tambah</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#tambahBarangModal" data-title="<?= $pecah['nama_barang'];?>"  data-idbarang="<?= $pecah['id']; ?>" data-deskripsi="<?= $pecah['deskripsi'];?>">Tambah</button>
                     </div>
                 </div>
             </div>
@@ -26,13 +24,12 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="tambahBarangModal" tabindex="-1" aria-labelledby="tambahBarangModalLabel" aria-hidden="true">
+<div class="modal fade" id="tambahBarangModal" tabindex="-1" aria-labelledby="tambahBarangModalLabel" aria-hidden="true" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="" method="POST">
                 <div class="modal-header">
                     <h5 class="modal-title" id="tambahBarangModalLabel"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <h6 id="nama-barang"></h6>
@@ -40,6 +37,8 @@
                         <label for="jumlah">Jumlah</label>
                         <input type="number" class="form-control" id="jumlah" name="jumlah">
                         <input type="hidden" name="idBarang" id="idBarang">
+                        <input type="hidden" name="nama_barang" id="nama_barang">
+                        <input type="hidden" name="deskripsi" id="deskripsi">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -51,24 +50,38 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <script>
     $('#tambahBarangModal').on('show.bs.modal', function(event) {
         const button = $(event.relatedTarget)
         const title = button.data('title')
         const idBarang = button.data('idbarang')
+        const deskripsi = button.data('deskripsi')
         $('#idBarang').val(idBarang)
         const modal = $(this)
         modal.find('.modal-title').text('Tambah ' + title)
+        
+        $('#nama_barang').val(title)
+        $('#deskripsi').val(deskripsi)
     })
 </script>
 
 <?php
 if (isset($_POST['simpan'])) {
-    $koneksi= mysqli_query("UPDATE barang SET jumlah = jumlah + '$_POST[jumlah]' WHERE id = '$_POST[idBarang]'");
-    $tambahkestok = mysqli_query("UPDATE stok SET stock = '$_POST[jumlah]' where id='$_POST[idBarang]'");
+    $idBarang = $_POST['idBarang'];
+    $nama_barang = $_POST['nama_barang'];
+    $deskripsi = $_POST['deskripsi'];
+    $jumlah = $_POST['jumlah'];
+
+
+    $masukkebarang= mysqli_query($koneksi,"UPDATE barang SET jumlah = jumlah + '$_POST[jumlah]' WHERE id = '$idBarang'");
+    
+    $masukkestok= mysqli_query($koneksi, "INSERT INTO stok (namabarang, deskripsi, stock) values('$nama_barang', '$deskripsi', '$jumlah') ");
+
     echo "<script>alert('Data Berhasil Ditambahkan');</script>";
-    echo "<script>location='index.php?page=category&category=$_POST[idCategory]';</script>";
+    echo "<script>location='../index.php';</script>";
 }
 ?>
 

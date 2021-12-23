@@ -116,6 +116,7 @@ if($_SESSION['level'] == 'user'){
                         <div class="modal-body">
                             Apakah Anda yakin ingin menghapus <?=$namabarang?>?
                             <input type="hidden" name="idbarangg" value="<?=$idbarangg;?>">
+                            <input type="hidden" name="namabarang" value="<?=$namabarang;?>">
                             <br> <br>
                             <button type="submit" class="btn btn-danger" name="hapusbarang">Hapus</button>
                         </div>

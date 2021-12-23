@@ -33,7 +33,7 @@ error_reporting(0);
 					<input class="text mb-3" type="password" name="confirm" placeholder="Confirm Password" required=""> <br>
 					<input class="submit" type="submit" name="btnlogin" placeholder="Register"> 
 				</form>
-				<p>Sudah punya akun? <a href="../login/login.php"> Masuk sekarang!</a></p>
+				<p>Sudah punya akun? <a href="../login/login.php"> Masu sekarang!</a></p>
 			</div>
 	</div>
 	<!-- //main -->

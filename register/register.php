@@ -17,6 +17,7 @@ error_reporting(0);
 <!-- //Custom Theme files -->
 <!-- web font -->
 <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Work+Sans:wght@500&display=swap">
 <!-- //web font -->
 </head>
 <body>
@@ -26,13 +27,13 @@ error_reporting(0);
 		<div class="main-agileinfo">
 			<div class="agileits-top">
 				<form id="basic-form" method="POST" class="my-login-validation" novalidate="" action="register.php">
-					<input class="text mb-3" type="text" name="username" placeholder="username" required="">
-					<input class="text mb-3 email" type="email" name="email" placeholder="email" required="">
-					<input class="text mb-3" type="password" name="password" placeholder="Password" required=""> 
+					<input class="text mb-3" type="text" name="username" placeholder="Username" required="">
+					<input class="text mb-3 email" type="email" name="email" placeholder="Email" required="">
+					<input class="text mb-3" type="password" name="password" placeholder="Password" required=""> <br/>
 					<input class="text mb-3" type="password" name="confirm" placeholder="Confirm Password" required=""> <br>
 					<input class="submit" type="submit" name="btnlogin" placeholder="Register"> 
 				</form>
-				<p>Already have an Account? <a href="../login/login.php"> Login Now!</a></p>
+				<p>Sudah punya akun? <a href="../login/login.php"> Masuk sekarang!</a></p>
 			</div>
 	</div>
 	<!-- //main -->
@@ -86,14 +87,14 @@ error_reporting(0);
                 },
                 messages: {
                     username: {
-                        minlength: "<span style='font-size:14px;'>Username must be at least 5 characters</span>"
+                        minlength: "<span style='font-size:14px; color:#ffff; font-family:Work Sans, sans-serif;'>Username setidaknya harus terdiri dari 5 karakter</span>"
                     },
                     password: {
-                        required: "<p style='font-size:14px;'>Please enter your password</p>",
-                        min: "<span style='font-size:14px;'>Password should be at least 8 character</span>"
+                        required: "<span style='font-size:14px;color:#ffff; font-family:Work Sans, sans-serif;'>Mohon isi password Anda</span>",
+                        minlength: "<span style='font-size:14px; color:#ffff; font-family:Work Sans, sans-serif;'>Password setidaknya harus terdiri dari 8 karakter</span>"
                     },
                     email: {
-                        email: "<span style='font-size:14px;'>The email should be in the format: abc@domain.tld</span>"
+                        email: "<span style='font-size:14px; color:#ffff; font-family:Work Sans, sans-serif;'>Email harus dalam format: abc@domain.tld</span>"
                     }
                 }
             });

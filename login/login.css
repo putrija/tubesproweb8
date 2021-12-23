@@ -1,47 +1,57 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Work+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet');
 
+.logo {
+  position: relative;
+  text-align: center;
+}
 .login-page {
   width: 360px;
-  padding: 8% 0 0;
+
   margin: auto;
 }
 .form {
   position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
+  background: #0f0f0f67;
+  max-height: 800px;
+  max-width: 1650px;
+  margin: 5px auto 5px;
+  border-radius: 10px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form input {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Work Sans', sans-serif;
   outline: 0;
-  background: #f2f2f2;
-  width: 100%;
+  background: rgba(255, 255, 255, 0.589);
   border: 0;
+  border-radius: 5px;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
 }
 .form button {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Work Sans', sans-serif;
   text-transform: uppercase;
   outline: 0;
   background: #6c757d;
-  width: 100%;
+  width: 75%;
   border: 0;
+  border-radius: 5px;
   padding: 15px;
-  color: #FFFFFF;
+  color: #383535;
+  background-color:rgba(255, 255, 255, 0.589);
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.form button:hover,.form button:active,.form button:focus {
-  background: #6c757d;
+.form button:hover,.form input:hover,.form button:active,.form button:focus {
+  background-color:rgb(255, 255, 255);
+  font-family:'Work Sans', sans-serif;
 }
 .form .message {
   margin: 15px 0 0;
@@ -88,8 +98,27 @@
 .container .info span .fa {
   color: #EF3B3A;
 }
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: black;
+}
+p {
+  font-family:'Work Sans', sans-serif;
+}
+.message{
+  font-family:'Work Sans', sans-serif;
+}
+.message .link:hover {
+  color: black;
+  transition: 0.5s;
+}
 body {
-  background: #6c757d;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.479),rgba(0,0,0,0.75)),url(images/bg1.jpg);
+  background-size: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      

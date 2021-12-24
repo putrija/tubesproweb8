@@ -9,6 +9,18 @@ error_reporting(0);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>welcome</title>
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+    $( function() {
+
+        $( "#username" ).autocomplete({
+        source: "data.php"
+        });
+    });
+    </script>
 </head>
 <body>
     <div class="logo">
@@ -18,7 +30,7 @@ error_reporting(0);
         <div class="form">
             <h2>Masuk</h2>
             <form method="POST" class="my-login-validation" novalidate="">
-            <input type="text" name="username" placeholder="Username"/><br/>
+            <input type="text" name="username" id="username" placeholder="Username"/><br/>
             <input type="password" name="password" placeholder="Password"/>
             <div class="form-group m-0">
 			    <button type="submit" class="btn btn-primary btn-block" name="btnlogin">

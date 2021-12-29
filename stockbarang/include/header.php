@@ -67,11 +67,15 @@ if(empty($_SESSION['username'])){
                             <a class="nav-link roboto" href="keluar.php"><i class='fas fa-truck-moving mr-3' style='font-size:24px'></i>
                                 Barang Keluar
                             </a>
-                            <?php if($_SESSION['level'] == 'admin'){ ?>
-                            <a class="nav-link roboto" href="saran.php"><i class='far fa-edit mr-3' style="font-size:25px;"></i>
+                            <?php if($_SESSION['level'] == 'admin') : ?>
+                            <a class="nav-link" href="saran.php">
                                 Saran
                             </a>
-                            <?php } ?>
+                            <?php else: ?>
+                            <a class="nav-link" href="komentar.php">
+                                Komentar
+                            </a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </nav>

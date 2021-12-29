@@ -7,7 +7,7 @@ if(!isset($_SESSION)){
     $host = 'localhost';
     $user = 'root';
     $pass = '';
-    $database = 'stokbarang';
+    $database = 'stokbarang2';
 
     //membuat koneksi ke database
     $koneksi = mysqli_connect($host , $user , $pass, $database);

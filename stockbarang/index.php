@@ -61,7 +61,7 @@ if($_SESSION['level'] == 'user'){
                     <td><?=$i++?></td>
                     <td><?=$namabarang;?></td>
                     <td><?=$deskripsi;?></td>
-                    <td><?=$image;?></td>
+                    <td><img src="img/<?php echo $image; ?>" height="200px" alt="gambar"></td>
                     <td><?=$stock;?></td>
                     <td> 
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idbarangg?>">

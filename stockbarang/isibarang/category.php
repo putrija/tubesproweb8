@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><?= $pecah['nama_barang']; ?></h5>
                         <img src="../img/<?php echo $pecah['image']; ?>" height="200px" alt="gambar">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#tambahBarangModal" data-title="<?= $pecah['nama_barang'];?>"  data-idbarang="<?= $pecah['id']; ?>" data-deskripsi="<?= $pecah['deskripsi'];?>">Tambah</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#tambahBarangModal" data-title="<?= $pecah['nama_barang'];?>"  data-idbarang="<?= $pecah['id']; ?>" data-deskripsi="<?= $pecah['deskripsi'];?>" data-image="<?= $pecah['image'];?>">Tambah</button>
                     </div>
                 </div>
             </div>
@@ -40,6 +40,7 @@
                         <input type="hidden" name="idBarang" id="idBarang">
                         <input type="hidden" name="nama_barang" id="nama_barang">
                         <input type="hidden" name="deskripsi" id="deskripsi">
+                        <input type="hidden" name="image" id="image">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -60,12 +61,14 @@
         const title = button.data('title')
         const idBarang = button.data('idbarang')
         const deskripsi = button.data('deskripsi')
+        const image = button.data('image')
         $('#idBarang').val(idBarang)
         const modal = $(this)
         modal.find('.modal-title').text('Tambah ' + title)
         
         $('#nama_barang').val(title)
         $('#deskripsi').val(deskripsi)
+        $('#image').val(image)
     })
 </script>
 
@@ -74,12 +77,13 @@ if (isset($_POST['simpan'])) {
     $idBarang = $_POST['idBarang'];
     $nama_barang = $_POST['nama_barang'];
     $deskripsi = $_POST['deskripsi'];
+    $image = $_POST['image'];
     $jumlah = $_POST['jumlah'];
 
 
     $masukkebarang= mysqli_query($koneksi,"UPDATE barang SET jumlah = jumlah + '$_POST[jumlah]' WHERE id = '$idBarang'");
     
-    $masukkestok= mysqli_query($koneksi, "INSERT INTO stok (namabarang, deskripsi, stock) values('$nama_barang', '$deskripsi', '$jumlah') ");
+    $masukkestok= mysqli_query($koneksi, "INSERT INTO stok (namabarang, deskripsi, image, stock) values('$nama_barang', '$deskripsi', '$image', '$jumlah') ");
 
     echo "<script>alert('Data Berhasil Ditambahkan');</script>";
     echo "<script>location='../index.php';</script>";

@@ -27,51 +27,48 @@
           </nav>
     </section>
     <div class="content">
-      <div class="imgbox">
-        <img src="images/apelss.png">
-      </div>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="images/mac3.jpg" style="height:650px;    width: 60%;">
-    </div>
-    <div class="carousel-item">
-      <img src="images/iPhone12pro-13-scaled.jpg" style="height:650px;    width: 60%;">
-    </div>
-    <div class="carousel-item">
-      <img src="images/macbook-pro-16.jpg" style="height:650px;    width: 60%;">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </button>
-</div>
-
-      
-      <div class="textbox">
-        <h2 class="selamat">SELAMAT DATANG DI EightO</h2>
-        <p class="teks">EightO adalah website gudang barang elektronik bermerk Apple oleh Kelompok 8. </br>Silahkan masuk atau daftarkan akun Anda untuk mengakses stok barang.</p>
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/mac3.jpg" width="100%">
         </div>
+        <div class="carousel-item">
+          <img src="images/iPhone12pro-13-scaled.jpg" width="100%">
+        </div>
+        <div class="carousel-item">
+          <img src="images/macbook-pro-16.jpg" width="100%">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </button>
     </div>
+
+<section>
+<div class="textbox">
+  <h2 class="selamat">SELAMAT DATANG DI EightO</h2>
+  <p class="teks">EightO adalah website gudang barang elektronik bermerk Apple oleh Kelompok 8. </br>Silahkan masuk atau daftarkan akun Anda untuk mengakses stok barang.</p>
+  </div>
+</div>
   </br>
   </br>
   </br>
   </br>
   </section>
  
-    <div class="container-fluid py-5">
-    <div class="container">
-    <div class="row mt-5 mb-5">
+<div class="container-fluid py-5">
+<div class="container">
+<div class="row mt-5 mb-5">
 
   <div class="col-4 col-lg-4 col-sm-7">
   <div class="card mb-3" style="width: 20rem height=10rem; background-color: #F0FFFF;">
@@ -84,44 +81,46 @@
     </div>
   </div>
 
-    <div class="col-lg-4 col-sm-7">
-      <div class="card mb-3" style="width: 20rem height=10rem;  background-color: #F0FFFF;">
-        <img src="images/macbook-pro-16.jpg" class="card-img-top" style="width:600 px"; style= "height:500 px">
-        <div class="card-body">
-          <h5 class="card-title">MacBook Pro (16 Inci)</h5>
-          <p class="card-text">The MacBook Pro is a line of Macintosh notebook computers introduced in January 2006 by Apple Inc. It is the higher-end model of the MacBook family, sitting above the consumer-focused MacBook Air, and is currently sold with 13-inch, 14-inch, and 16-inch screens. All current models of the MacBook Pro use variants of the Apple-designed M1 system on a chip.</p>
-          <a href="https://www.youtube.com/watch?v=9tobL8U7dQo" class="btn btn-primary">Lihat Selengkapnya</a>
-        </div>
-      </div> 
+<div class="col-lg-4 col-sm-7">
+  <div class="card mb-3" style="width: 20rem height=10rem;  background-color: #F0FFFF;">
+    <img src="images/macbook-pro-16.jpg" class="card-img-top" style="width:600 px"; style= "height:500 px">
+    <div class="card-body">
+      <h5 class="card-title">MacBook Pro (16 Inci)</h5>
+      <p class="card-text">The MacBook Pro is a line of Macintosh notebook computers introduced in January 2006 by Apple Inc. It is the higher-end model of the MacBook family, sitting above the consumer-focused MacBook Air, and is currently sold with 13-inch, 14-inch, and 16-inch screens. All current models of the MacBook Pro use variants of the Apple-designed M1 system on a chip.</p>
+      <a href="https://www.youtube.com/watch?v=9tobL8U7dQo" class="btn btn-primary">Lihat Selengkapnya</a>
     </div>
+  </div> 
+</div>
 
-  <div class="col-lg-4 col-sm-7">
-    <div class="card mb-3" style="width: 20rem height=10rem; background-color: #F0FFFF;">
-      <img src="images/apple-watch-series-7.jpg" class="card-img-top" style="width:1000 px"; style= "height:500 px">
-      <div class="card-body">
-        <h5 class="card-title">Apple Watch Series 7</h5>
-        <p class="card-text">Apple Watch incorporates fitness tracking, health-oriented capabilities, and wireless telecommunication, and integrates with iOS and other Apple products and services.Apple has introduced new generations of the Apple Watch with improved internal components each September each labeled by Apple a 'Series', with certain exceptions.</p>
-        <a href="https://www.youtube.com/watch?v=MMdQ-gWBNZE&pp=ugMICgJpZBABGAE%3D" class="btn btn-primary">Lihat Selengkapnya</a>
-      </div>
-    </div> 
-  </div>
-    <footer>
-        <div class="footer-content">
-            <h3>EightO</h3>
-            <p>Contact Person:</p>
-            <ul class="instagram">
-                <li><a href="https://www.instagram.com/ikramlubis.mhd/"><i class="fa fa-instagram"> Mhd Ikram Al Asy'ari Lubis</i></a></li>
-                <li><a href="https://www.instagram.com/rahman__prd/"><i class="fa fa-instagram"> Muhammad Nurahman</i></a></li>
-                <li><a href="https://www.instagram.com/joelspars/"><i class="fa fa-instagram"> Joel Tigor Marbungaran Sianipar</i></a></li>
-                <li><a href="https://www.instagram.com/putrija.m/"><i class="fa fa-instagram"> Putrija Br. Malau </i></a></li>
-                <li><a href="https://www.instagram.com/tryanisimbolon/"><i class="fa fa-instagram"> Agnes Tryani Simbolon</i></a></li>
-                <li><a href="https://www.instagram.com/felicia.nlvn/"><i class="fa fa-instagram"> Felicia Nelvina</i></a></li>
-              </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>Copyright &copy;2021 Kelompok 8 Tugas Besar Pemrograman Web</p>
-        </div>
-    </footer>
+<div class="col-lg-4 col-sm-7">
+  <div class="card mb-3" style="width: 20rem height=10rem; background-color: #F0FFFF;">
+    <img src="images/apple-watch-series-7.jpg" class="card-img-top" style="width:1000 px"; style= "height:500 px">
+    <div class="card-body">
+      <h5 class="card-title">Apple Watch Series 7</h5>
+      <p class="card-text">Apple Watch incorporates fitness tracking, health-oriented capabilities, and wireless telecommunication, and integrates with iOS and other Apple products and services.Apple has introduced new generations of the Apple Watch with improved internal components each September each labeled by Apple a 'Series', with certain exceptions.</p>
+      <a href="https://www.youtube.com/watch?v=MMdQ-gWBNZE&pp=ugMICgJpZBABGAE%3D" class="btn btn-primary">Lihat Selengkapnya</a>
+    </div>
+  </div> 
+</div>
+
+<footer>
+    <div class="footer-content">
+        <h3>EightO</h3>
+        <p>Contact Person:</p>
+        <ul class="instagram">
+            <li><a href="https://www.instagram.com/ikramlubis.mhd/"><i class="fa fa-instagram"> Mhd Ikram Al Asy'ari Lubis</i></a></li>
+            <li><a href="https://www.instagram.com/rahman__prd/"><i class="fa fa-instagram"> Muhammad Nurahman</i></a></li>
+            <li><a href="https://www.instagram.com/joelspars/"><i class="fa fa-instagram"> Joel Tigor Marbungaran Sianipar</i></a></li>
+            <li><a href="https://www.instagram.com/putrija.m/"><i class="fa fa-instagram"> Putrija Br. Malau </i></a></li>
+            <li><a href="https://www.instagram.com/tryanisimbolon/"><i class="fa fa-instagram"> Agnes Tryani Simbolon</i></a></li>
+            <li><a href="https://www.instagram.com/felicia.nlvn/"><i class="fa fa-instagram"> Felicia Nelvina</i></a></li>
+          </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright &copy;2021 Kelompok 8 Tugas Besar Pemrograman Web</p>
+    </div>
+</footer>
+
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>

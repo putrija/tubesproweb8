@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2021 at 07:08 AM
+-- Generation Time: Dec 29, 2021 at 09:47 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -50,7 +50,7 @@ INSERT INTO `akun` (`id`, `username`, `email`, `password`, `level`, `code`) VALU
 (11, 'a', 'a', '86f7e437faa5a7fce15d1ddcb9eaeaea377667b8', 'user', ''),
 (14, 'makasih', 'makasih@gmail.com', '52001292f1348b1cebff1b711488e3471c731272', 'user', ''),
 (16, 'marikitacoba', 'marikitacoba@gmail.c', '0eeec8b926e870f701cea577fb9a7b718141746d', 'user', ''),
-(19, 'putriputri', 'putrijamalau23@gmail.com', '38cb4bf4429deb51f5a9a1a541ae135747c5bbf6', 'user', '0'),
+(19, 'putriputri', 'putrijamalau23@gmail.com', '38cb4bf4429deb51f5a9a1a541ae135747c5bbf6', 'user', '907052'),
 (20, '', '', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'user', ''),
 (21, 'fayadh', 'fayadhfnst@gmail.com', '70793be5c63a22446c916590588e242544e5e960', 'user', '0');
 
@@ -149,7 +149,8 @@ CREATE TABLE `keluar` (
 
 INSERT INTO `keluar` (`idkeluar`, `idbarang`, `tanggal`, `penerima`, `kuantitas`) VALUES
 (26, 35, '2021-12-23 15:34:18', 'putri', 100),
-(27, 36, '2021-12-23 17:53:57', 'putri', 100);
+(27, 36, '2021-12-23 17:53:57', 'putri', 100),
+(28, 45, '2021-12-29 06:41:04', 'putri', 4);
 
 -- --------------------------------------------------------
 
@@ -181,16 +182,34 @@ INSERT INTO `masuk` (`idmasuk`, `idbarang`, `tanggal`, `keterangan`, `kuantitas`
 CREATE TABLE `saran` (
   `idsaran` int(11) NOT NULL,
   `iduser` int(11) NOT NULL,
-  `isi` text NOT NULL
+  `isi` text NOT NULL,
+  `waktu` varchar(255) NOT NULL,
+  `tujuan` varchar(255) NOT NULL DEFAULT 'umum',
+  `level` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `saran`
 --
 
-INSERT INTO `saran` (`idsaran`, `iduser`, `isi`) VALUES
-(4, 11, 'minta tolong masukkan barang a'),
-(5, 11, 'hai');
+INSERT INTO `saran` (`idsaran`, `iduser`, `isi`, `waktu`, `tujuan`, `level`) VALUES
+(4, 11, 'minta tolong masukkan barang a', '', '', ''),
+(5, 22, 'Halo', '', '', ''),
+(6, 22, 'Halo guys', '', '', ''),
+(7, 22, 'Mantav', '1640535342', 'umum', ''),
+(8, 22, 'qqwfqw3fr', '1640535705', 'umum', 'user'),
+(9, 25, 'Ini balasan admin', '1640535706\r\n', '22', 'admin'),
+(10, 2, 'ini balasan admin lagi', '1640537989', 'umum', 'admin'),
+(11, 2, 'untuk user1', '1640538297', '22', 'admin'),
+(12, 2, 'untuk user a', '1640538359', '11', 'admin'),
+(13, 2, 'Tolong cepat admin', '1640538628', 'umum', 'admin'),
+(14, 22, 'tolong cepat admin', '1640538690', 'umum', 'user'),
+(15, 22, 'Admin, tolong respon', '1640538751', 'umum', 'user'),
+(16, 2, 'Oke, bentar bes', '1640538777', '22', 'admin'),
+(0, 20, 'agaggahaahha\r\n\r\n', '1640763501', 'umum', 'user'),
+(0, 20, 'min tolong responnya\r\n', '1640763592', 'umum', 'user'),
+(0, 20, 'admin', '1640763744', 'umum', 'user'),
+(0, 2, 'yaaaaaaa', '1640763883', '20', 'admin');
 
 -- --------------------------------------------------------
 
@@ -205,6 +224,13 @@ CREATE TABLE `stok` (
   `image` text NOT NULL,
   `stock` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `stok`
+--
+
+INSERT INTO `stok` (`idbarang`, `namabarang`, `deskripsi`, `image`, `stock`) VALUES
+(46, 'iPhone 13 Pro', 'iPhone', 'iphone_13_pro.jpg', 1);
 
 --
 -- Indexes for dumped tables
@@ -241,12 +267,6 @@ ALTER TABLE `masuk`
   ADD PRIMARY KEY (`idmasuk`);
 
 --
--- Indexes for table `saran`
---
-ALTER TABLE `saran`
-  ADD PRIMARY KEY (`idsaran`);
-
---
 -- Indexes for table `stok`
 --
 ALTER TABLE `stok`
@@ -278,25 +298,19 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `keluar`
 --
 ALTER TABLE `keluar`
-  MODIFY `idkeluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idkeluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `masuk`
 --
 ALTER TABLE `masuk`
-  MODIFY `idmasuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
-
---
--- AUTO_INCREMENT for table `saran`
---
-ALTER TABLE `saran`
-  MODIFY `idsaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idmasuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `stok`
 --
 ALTER TABLE `stok`
-  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

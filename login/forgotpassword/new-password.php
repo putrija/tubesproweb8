@@ -12,8 +12,12 @@ if($email == false){
     <title>Create a New Password</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="forgot.css">
 </head>
 <body>
+    <div class="logo">
+        <img src="images/logo.png" width="150" weight="130">
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4 form">

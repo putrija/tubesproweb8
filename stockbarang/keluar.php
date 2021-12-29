@@ -42,11 +42,11 @@
                                                     <td><?php echo "$_SESSION[username]";?></td>
                                                     <?php if($_SESSION['level'] == 'admin'){ ?>
                                                     <td> 
-                                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idmasuk?>">
+                                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idkeluar?>">
                                                             Edit
                                                         </button>
                                                         <input type="hidden" name="idbarangygmaudihapus" value="<?=$idbarangg;?>">
-                                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idmasuk?>">
+                                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idkeluar?>">
                                                             Delete
                                                         </button>
                                                     </td>

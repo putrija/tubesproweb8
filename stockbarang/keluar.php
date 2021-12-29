@@ -151,8 +151,6 @@
             <br>
             <input type="number" name="kuantitas" placeholder="kuantitas" class="form-control" required>
             <br>
-            <input type="text" name="penerima" placeholder="penerima" class="form-control" required>
-            <br>
             <button type="submit" class="btn btn-primary" name="barangkeluar">Submit</button>
         </div>
         </form>

@@ -39,7 +39,7 @@
                         <td><?=$tanggal?></td>
                         <td><?=$namabarang;?></td>
                         <td><?=$kuantitas;?></td>
-                        <td><?=$keterangan;?></td>
+                        <td><?php echo "$_SESSION[username]";?></td>
                         <?php if($_SESSION['level'] == 'admin'){ ?>
                         <td> 
                                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idmasuk?>">
@@ -172,7 +172,7 @@
             <br>
             <input type="number" name="kuantitas" placeholder="Jumlah" class="form-control" required>
             <br>
-            <input type="text" name="keterangan" placeholder="Pengirim" class="form-control" required>
+            <input type="hidden" name="keterangan" placeholder="Pengirim" class="form-control" >
             <br>
             <button type="submit" class="btn btn-primary" name="barangmasuk">Submit</button>
         </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2021 at 03:51 PM
+-- Generation Time: Dec 29, 2021 at 07:08 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -65,6 +65,7 @@ CREATE TABLE `barang` (
   `id_kategori` int(200) NOT NULL,
   `nama_barang` varchar(200) NOT NULL,
   `deskripsi` varchar(200) NOT NULL,
+  `image` text NOT NULL,
   `jumlah` int(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -72,15 +73,40 @@ CREATE TABLE `barang` (
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id`, `id_kategori`, `nama_barang`, `deskripsi`, `jumlah`) VALUES
-(1, 1, 'iPhone 13 Pro', 'iPhone', 25),
-(2, 1, 'iPhone 13', 'iPhone', 0),
-(3, 2, 'iPad Pro Generasi 5', 'iPad', 0),
-(4, 2, 'iPad Pro Generasi 4', 'iPad', 0),
-(5, 3, 'Apple Watch SE', 'Watch', 0),
-(6, 3, 'Apple Watch Series 7', 'Watch', 0),
-(7, 4, 'MacBook Pro M1 (2020)', 'Mac', 0),
-(8, 4, 'MacBook Air M1 (2020)', 'Mac', 0);
+INSERT INTO `barang` (`id`, `id_kategori`, `nama_barang`, `deskripsi`, `image`, `jumlah`) VALUES
+(1, 1, 'iPhone 13 Pro', 'iPhone', 'iphone_13_pro.jpg', 0),
+(2, 1, 'iPhone 13', 'iPhone', 'iPhone_13.jpg', 0),
+(3, 2, 'iPad Pro Generasi 5', 'iPad', 'iPad_5.jpg', 0),
+(4, 2, 'iPad Pro Generasi 4', 'iPad', 'iPad_4.jpg', 0),
+(5, 3, 'Apple Watch SE', 'Watch', 'watch_SE.png', 0),
+(6, 3, 'Apple Watch Series 7', 'Watch', 'watch_7.jpg', 0),
+(7, 4, 'MacBook Pro M1 (2020)', 'Mac', 'macbook_pro_m1.jpg', 0),
+(8, 4, 'MacBook Air M1 (2020)', 'Mac', 'macbook_air_m1.jpg', 0),
+(9, 1, 'iPhone 12 Pro', 'iPhone', 'iPhone_12_promax.jpg', 0),
+(10, 1, 'iPhone 12', 'iPhone', 'iphone_12.jpeg', 0),
+(11, 1, 'iPhone SE', 'iPhone', 'iphone_SE.jpg', 0),
+(12, 1, 'iPhone 11 Pro', 'iPhone', 'iPhone_11_pro.jpg', 0),
+(13, 1, 'iPhone 11', 'iPhone', 'iphone_11.jpg', 0),
+(14, 1, 'iPhone XR', 'iPhone', 'iphone_xr.jpg', 0),
+(15, 1, 'iPhone XS', 'iPhone', 'iphone-xs.jpg', 0),
+(16, 1, 'iPhone X', 'iPhone', 'iphone-x.jpg', 0),
+(17, 2, 'iPad Pro Generasi 3', 'iPad', 'ipad_3.webp', 0),
+(18, 2, 'iPad Air Generasi 4', 'iPad', 'ipad-air-4.webp', 0),
+(19, 2, 'iPad Generasi 9', 'iPad', 'ipad-9.jpg', 0),
+(20, 2, 'iPad Generasi 8', 'iPad', 'ipad-8.webp', 0),
+(21, 2, 'iPad mini Generasi 6', 'iPad', 'ipad-mini-6.jpg', 0),
+(22, 2, 'iPad mini Generasi 5', 'iPad', 'ipad-mini-5.jpg', 0),
+(23, 3, 'Apple Watch Series 6', 'Watch', 'watch-6.jpg', 0),
+(24, 3, 'Apple Watch Series 5', 'Watch', 'watch-5.jpg', 0),
+(25, 3, 'Apple Watch Series 3', 'Watch', 'watch-3.jpg', 0),
+(26, 4, 'MacBook Pro (16 Inci)', 'Mac', 'macbook-pro-16.webp', 0),
+(27, 4, 'MacBook Pro (2020)', 'Mac', 'macbook-pro-2020.jpg', 0),
+(28, 4, 'MacBook Air (2020)', 'Mac', 'macbook_air_2020.webp', 0),
+(29, 4, 'MacBook Air (2017)', 'Mac', 'macbook-air-2017.webp', 0),
+(30, 4, 'iMac M1 2021', 'Mac', 'imac_m1_pro.jpg', 0),
+(31, 4, 'iMac Pro', 'Mac', 'imac-pro.webp', 0),
+(32, 4, 'iMac 2020', 'Mac', 'imac_2020.jpg', 0),
+(33, 4, 'Mac Mini M1 (2020)', 'Mac', 'mac_mini_m1.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -117,6 +143,14 @@ CREATE TABLE `keluar` (
   `kuantitas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `keluar`
+--
+
+INSERT INTO `keluar` (`idkeluar`, `idbarang`, `tanggal`, `penerima`, `kuantitas`) VALUES
+(26, 35, '2021-12-23 15:34:18', 'putri', 100),
+(27, 36, '2021-12-23 17:53:57', 'putri', 100);
+
 -- --------------------------------------------------------
 
 --
@@ -130,6 +164,13 @@ CREATE TABLE `masuk` (
   `keterangan` varchar(20) NOT NULL,
   `kuantitas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `masuk`
+--
+
+INSERT INTO `masuk` (`idmasuk`, `idbarang`, `tanggal`, `keterangan`, `kuantitas`) VALUES
+(46, 35, '2021-12-23 15:34:05', 'putri', 300);
 
 -- --------------------------------------------------------
 
@@ -148,7 +189,8 @@ CREATE TABLE `saran` (
 --
 
 INSERT INTO `saran` (`idsaran`, `iduser`, `isi`) VALUES
-(4, 11, 'minta tolong masukkan barang a');
+(4, 11, 'minta tolong masukkan barang a'),
+(5, 11, 'hai');
 
 -- --------------------------------------------------------
 
@@ -160,15 +202,9 @@ CREATE TABLE `stok` (
   `idbarang` int(11) NOT NULL,
   `namabarang` varchar(20) NOT NULL,
   `deskripsi` varchar(20) NOT NULL,
+  `image` text NOT NULL,
   `stock` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `stok`
---
-
-INSERT INTO `stok` (`idbarang`, `namabarang`, `deskripsi`, `stock`) VALUES
-(34, 'iPhone 13 Pro', 'iPhone', 25);
 
 --
 -- Indexes for dumped tables
@@ -230,7 +266,7 @@ ALTER TABLE `akun`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -242,25 +278,25 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `keluar`
 --
 ALTER TABLE `keluar`
-  MODIFY `idkeluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `idkeluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `masuk`
 --
 ALTER TABLE `masuk`
-  MODIFY `idmasuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `idmasuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `saran`
 --
 ALTER TABLE `saran`
-  MODIFY `idsaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idsaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `stok`
 --
 ALTER TABLE `stok`
-  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `idbarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

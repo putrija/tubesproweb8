@@ -39,7 +39,7 @@
                         <td><?=$tanggal?></td>
                         <td><?=$namabarang;?></td>
                         <td><?=$kuantitas;?></td>
-                        <td><?=$keterangan;?></td>
+                        <td><?php echo "$_SESSION[username]";?></td>
                         <?php if($_SESSION['level'] == 'admin'){ ?>
                         <td> 
                                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idmasuk?>">

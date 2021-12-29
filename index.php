@@ -29,13 +29,36 @@
           </nav>
     </section>
     <div class="content">
-      <div class="imgbox">
-        <img src="images/apelss.png">
-      </div>
       <div class="textbox">
         <h2 class="selamat">SELAMAT DATANG DI EightO</h2>
         <p class="teks">EightO adalah website gudang barang elektronik bermerk Apple oleh Kelompok 8. </br>Silahkan masuk atau daftarkan akun Anda untuk mengakses stok barang.</p>
         </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/mac3.jpg" width="100%">
+          </div>
+          <div class="carousel-item">
+            <img src="images/iPhone12pro-13-scaled.jpg" width="100%">
+          </div>
+          <div class="carousel-item">
+            <img src="images/macbook-pro-16.jpg" width="100%">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
     </div>
   </br>
   </br>

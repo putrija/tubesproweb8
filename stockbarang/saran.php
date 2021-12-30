@@ -60,7 +60,7 @@ while ($pecah = $ambil -> fetch_assoc()) { ?>
                 $time = time();
 
                 $koneksi->query("INSERT INTO saran (iduser, isi, waktu, tujuan, level) VALUES ('$iduser', '$isi', '$time', '$idpengguna', '$level')");
-                echo "<meta http-equiv='refresh' content='0;url=masuk.php'>";
+                echo "<meta http-equiv='refresh' content='0;url=saran.php'>";
             }
         
         ?>

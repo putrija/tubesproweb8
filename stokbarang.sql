@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2021 at 03:44 PM
+-- Generation Time: Dec 30, 2021 at 04:18 PM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -184,11 +184,11 @@ INSERT INTO `masuk` (`idmasuk`, `idbarang`, `tanggal`, `keterangan`, `kuantitas`
 --
 
 CREATE TABLE `saran` (
-  `idsaran` int(50) NOT NULL,
-  `iduser` int(50) NOT NULL,
+  `idsaran` int(11) NOT NULL,
+  `iduser` int(11) NOT NULL,
   `isi` text NOT NULL,
   `waktu` varchar(255) NOT NULL,
-  `tujuan` varchar(255) NOT NULL,
+  `tujuan` varchar(255) NOT NULL DEFAULT 'umum',
   `level` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -197,7 +197,8 @@ CREATE TABLE `saran` (
 --
 
 INSERT INTO `saran` (`idsaran`, `iduser`, `isi`, `waktu`, `tujuan`, `level`) VALUES
-(0, 22, 'Selamat malam. Apa saja iphone yang tersedia?', '1640875083', 'umum', 'user');
+(35, 7, 'Apa saja jenis iPhone yang tersedia sekarang?', '1640877419', 'umum', 'user'),
+(36, 2, 'untuk sekarang masih iPhone 13 Pro saja kak', '1640877458', '7', 'admin');
 
 -- --------------------------------------------------------
 
@@ -307,6 +308,12 @@ ALTER TABLE `keluar`
 --
 ALTER TABLE `masuk`
   MODIFY `idmasuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+
+--
+-- AUTO_INCREMENT for table `saran`
+--
+ALTER TABLE `saran`
+  MODIFY `idsaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `stok`

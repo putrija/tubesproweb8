@@ -14,6 +14,10 @@
     width: 100%;
     height: 15vw;
     object-fit: cover;}
+
+    h5 {
+      color:#566573;
+    }
   </style>
 
     <title>EightO</title>
@@ -28,12 +32,12 @@
             </div>
           </nav>
     </section>
+
+    
     <div class="content">
-      <div class="textbox">
-        <h2 class="selamat">SELAMAT DATANG DI EightO</h2>
-        <p class="teks">EightO adalah website gudang barang elektronik bermerk Apple oleh Kelompok 8. </br>Silahkan masuk atau daftarkan akun Anda untuk mengakses stok barang.</p>
-        </div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <section>
+      <div class="container-fluid carousel" style="padding: 0px 150px 0px 150px;">
+        <div id="carouselExampleIndicators" class="carousel slide px-10 py-10" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -41,25 +45,35 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="images/mac3.jpg" width="100%">
+            <img src="images/mac-3 edit.jpg" width="100%">
+            <div class="carousel-caption d-none d-md-block">
+          <h5>Selamat Datang Di EightO!</h5>
+          </div>
           </div>
           <div class="carousel-item">
-            <img src="images/iPhone12pro-13-scaled.jpg" width="100%">
+            <img src="images/iPhone12pro-13-scaled-edit.jpg" width="100%">
+            <div class="carousel-caption d-none d-md-block">
+          <h5>EightO adalah website gudang barang elektronik bermerk Apple oleh Kelompok 8.</h5>
+          </div>
           </div>
           <div class="carousel-item">
-            <img src="images/macbook-pro-16.jpg" width="100%">
+            <img src="images/mac-16 edit.jpg" width="100%">
+            <div class="carousel-caption d-none d-md-block">
+          <h5>Silahkan masuk atau daftarkan akun Anda untuk mengakses stok barang!</h5>
+          </div>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="carousel-control-prev-icon" aria-hidden="false"></span>
           <span class="sr-only">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="carousel-control-next-icon" aria-hidden="false"></span>
           <span class="sr-only">Next</span>
         </button>
       </div>
     </div>
+  </div>
   </br>
   </br>
   </br>

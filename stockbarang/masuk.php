@@ -3,7 +3,7 @@
 <div class="card mb-4">
     <div class="card-header">
         <!-- Button to Open Isi Barang -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
             Tambah barang
         </button>
     </div>
@@ -121,7 +121,8 @@
         <div class="table-responsive mt-5">
             <form action="" method="post">
                 <textarea placeholder="Masukkan Saran" name="isi" id="isi" class="form-control" rows="10"></textarea>
-                <button name="kirim" class="btn btn-primary" type="submit">Kirim</button>
+                <br/>
+                <button name="kirim" class="btn btn-secondary" type="submit">Kirim</button>
             </form>
         </div>
 

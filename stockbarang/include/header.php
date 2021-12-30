@@ -68,11 +68,11 @@ if(empty($_SESSION['username'])){
                                 Barang Keluar
                             </a>
                             <?php if($_SESSION['level'] == 'admin') : ?>
-                            <a class="nav-link" href="saran.php">
-                                Saran
+                            <a class="nav-link roboto" href="saran.php"><i class='far fa-edit mr-3' style='font-size:24px'></i>
+                                &nbsp Saran
                             </a>
                             <?php else: ?>
-                            <a class="nav-link" href="komentar.php">
+                            <a class="nav-link roboto" href="komentar.php"><i class='far fa-envelope-open mr-4' style='font-size:24px'></i>
                                 Komentar
                             </a>
                             <?php endif; ?>

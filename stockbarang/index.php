@@ -9,8 +9,8 @@ if($_SESSION['level'] == 'user'){
 <div class="card mb-4">
     <div class="card-header">
         <!-- Button to Open Isi Barang -->
-        <a href="isibarang.php" class="btn btn-info">Tambah Barang</a>
-        <a href="export.php" class="btn btn-info">Export Barang</a>
+        <a href="isibarang.php" class="btn btn-secondary">Tambah Barang</a>
+        <a href="export.php" class="btn btn-secondary">Export Barang</a>
     </div>
     <div class="card-body">
 

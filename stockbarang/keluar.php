@@ -3,7 +3,7 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <!-- Button to Open the Modal -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
                                     Ambil barang
                                 </button>
                             </div>

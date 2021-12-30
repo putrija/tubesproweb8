@@ -48,7 +48,8 @@ while ($pecah = $ambil -> fetch_assoc()) { ?>
                 <div class="table-responsive mt-5">
                     <form action="" method="post">
                         <textarea style="height: 50px;" placeholder="Masukkan Saran" name="isi" id="isi" class="form-control" rows="10"></textarea>
-                        <button name="kirim" class="btn btn-primary" type="submit">Kirim</button>
+                        <br/>
+                        <button name="kirim" class="btn btn-secondary" type="submit">Kirim</button>
                     </form>
                 </div>
 

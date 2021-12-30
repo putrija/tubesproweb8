@@ -1,3 +1,5 @@
+<?php include "include/header.php"; ?>
+
 <?php 
 require ("../koneksi.php");
 if(empty($_SESSION['username'])){

@@ -90,7 +90,7 @@
     <img class="card-img-top" src="images/iPhone13-Pro max.jpg" alt="iPhone 13 Pro">
     <div class="card-body">
       <h5 class="card-title">iPhone 13 Pro</h5>
-      <p class="card-text">The iPhone 13 Pro and iPhone 13 Pro Max are smartphones designed and marketed by Apple Inc. They are the flagship smartphones in the fifteenth generation of the iPhone, succeeding the iPhone 12 Pro and iPhone 12 Pro Max. They were announced on September 14, 2021, and became available ten days later, on September 24, 2021. </p>
+      <p class="card-text">IPhone 13 Pro dan iPhone 13 Pro Max adalah smartphone yang dirancang dan dipasarkan oleh Apple Inc. Mereka adalah smartphone andalan di generasi kelima belas dari iPhone, menggantikan iPhone 12 Pro dan iPhone 12 Pro Max. Mereka diumumkan pada 14 September 2021, dan tersedia sepuluh hari kemudian, pada 24 September 2021.</p>
     </div>
     <div class="card-footer">
     <a href="https://www.youtube.com/watch?v=9tobL8U7dQo" class="btn btn-secondary">Lihat Selengkapnya</a>
@@ -100,7 +100,7 @@
     <img class="card-img-top" src="images/macbook-pro-16.jpg" alt="Macbook Pro">
     <div class="card-body">
       <h5 class="card-title">MacBook Pro (16 Inch)</h5>
-      <p class="card-text">The MacBook Pro is a line of Macintosh notebook computers introduced in January 2006 by Apple Inc. It is the higher-end model of the MacBook family, sitting above the consumer-focused MacBook Air, and is currently sold with 13-inch, 14-inch, and 16-inch screens. All current models of the MacBook Pro use variants of the Apple-designed M1 system on a chip.</p>
+      <p class="card-text">MacBook Pro adalah barisan komputer notebook Macintosh yang diperkenalkan pada Januari 2006 oleh Apple Inc. Ini adalah model kelas atas dari keluarga MacBook, duduk di atas MacBook Air yang berfokus pada konsumen, dan saat ini dijual dengan layar 13 inci, 14 inci, dan 16 inci. Semua model MacBook Pro saat ini menggunakan varian sistem M1 yang dirancang Apple pada chip.</p>
     </div>
     <div class="card-footer">
     <a href="https://www.youtube.com/watch?v=9tobL8U7dQo" class="btn btn-secondary">Lihat Selengkapnya</a>
@@ -110,7 +110,7 @@
     <img class="card-img-top" src="images/apple-watch-series-7.jpg" alt="Apple Watch Series 7">
     <div class="card-body">
       <h5 class="card-title">Apple Watch Series 7</h5>
-      <p class="card-text">Apple Watch incorporates fitness tracking, health-oriented capabilities, and wireless telecommunication, and integrates with iOS and other Apple products and services.Apple has introduced new generations of the Apple Watch with improved internal components each September each labeled by Apple a 'Series', with certain exceptions.</p>
+      <p class="card-text">Apple Watch menggabungkan pelacakan kebugaran, kemampuan berorientasi kesehatan, dan telekomunikasi nirkabel, dan terintegrasi dengan iOS dan produk dan layanan Apple lainnya. Apple telah memperkenalkan generasi baru Apple Watch dengan komponen internal yang ditingkatkan setiap bulan September masing-masing diberi label oleh Apple 'Series', dengan pengecualian tertentu.</p>
     </div>
     <div class="card-footer">
     <a href="https://www.youtube.com/watch?v=MMdQ-gWBNZE&pp=ugMICgJpZBABGAE%3D" class="btn btn-secondary">Lihat Selengkapnya</a>

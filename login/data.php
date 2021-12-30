@@ -11,7 +11,7 @@
   die("Connection Failed: " .mysqli_connect_error());
  }
  $term = trim(strip_tags($_GET['term']));
- //query untuk menampilkan data dari tabel country
+ 
  $query = mysqli_query($conn, "SELECT * FROM akun WHERE username LIKE '%$term%' ");
 
  $array=array();

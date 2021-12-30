@@ -15,7 +15,7 @@
     height: 15vw;
     object-fit: cover;}
 
-    h5 {
+    .textcarousel {
       font-size: 30px;
       color: white;
       background-color: black;
@@ -49,19 +49,19 @@
           <div class="carousel-item active">
             <img src="images/mac-3 edit.jpg" width="100%">
             <div class="carousel-caption d-none d-md-block">
-          <h5>Selamat Datang Di EightO!</h5>
+          <h5 class="textcarousel">Selamat Datang Di EightO!</h5>
           </div>
           </div>
           <div class="carousel-item">
             <img src="images/iPhone12pro-13-scaled-edit.jpg" width="100%">
             <div class="carousel-caption d-none d-md-block">
-          <h5>EightO adalah website gudang barang elektronik bermerk Apple oleh Kelompok 8.</h5>
+          <h5 class="textcarousel">EightO adalah website gudang barang elektronik bermerk Apple oleh Kelompok 8.</h5>
           </div>
           </div>
           <div class="carousel-item">
             <img src="images/mac-16 edit.jpg" width="100%">
             <div class="carousel-caption d-none d-md-block">
-          <h5>Silahkan masuk atau daftarkan akun Anda untuk mengakses stok barang!</h5>
+          <h5 class="textcarousel">Silahkan masuk atau daftarkan akun Anda untuk mengakses stok barang!</h5>
           </div>
           </div>
         </div>

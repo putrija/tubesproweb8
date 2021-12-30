@@ -16,7 +16,9 @@
     object-fit: cover;}
 
     h5 {
-      color:#566573;
+      font-size: 30px;
+      color: white;
+      background-color: black;
     }
   </style>
 

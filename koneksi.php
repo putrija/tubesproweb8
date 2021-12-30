@@ -55,8 +55,6 @@ if(!isset($_SESSION)){
             $penguranganketabelkeluar = mysqli_query($koneksi, "insert into keluar (idbarang, penerima, kuantitas) values ('$barangnya', '$penerima', '$kuantitas')");
             $updatestockkeluar = mysqli_query($koneksi, "update stok set stock='$penguranganstoksekarangdengankuantitas' where idbarang='$barangnya'");
 
-            $idBarang = $_POST['idBarang'];
-
             $cekstoksekarang_2= mysqli_query($koneksi, "select * from stok where idbarang='$barangnya'");
             $ambildata_2 = mysqli_fetch_array($cekstoksekarang_2);
             $stoksekarang_2 = $ambildata_2['stock'];

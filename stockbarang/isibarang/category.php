@@ -81,9 +81,11 @@ if (isset($_POST['simpan'])) {
     $jumlah = $_POST['jumlah'];
 
 
-    $masukkebarang= mysqli_query($koneksi,"UPDATE barang SET jumlah = jumlah + '$_POST[jumlah]' WHERE id = '$idBarang'");
+    $masukkebarang= mysqli_query($koneksi,"UPDATE barang SET jumlah = jumlah + '$_POST[jumlah]'
+    WHERE id = '$idBarang'");
     
-    $masukkestok= mysqli_query($koneksi, "INSERT INTO stok (namabarang, deskripsi, image, stock) values('$nama_barang', '$deskripsi', '$image', '$jumlah') ");
+    $masukkestok= mysqli_query($koneksi, "INSERT INTO stok (namabarang, deskripsi, image, stock)
+    values('$nama_barang', '$deskripsi', '$image', '$jumlah') ");
 
     echo "<script>alert('Data Berhasil Ditambahkan');</script>";
     echo "<script>location='../index.php';</script>";

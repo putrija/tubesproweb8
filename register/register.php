@@ -46,7 +46,8 @@ error_reporting(0);
 	$confirm = sha1($_POST['confirm']);
 
 	if($password == $confirm) {
-		$pemeriksaan_username = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM akun WHERE username='$_POST[username]' OR email='$_POST[email]' "));
+		$pemeriksaan_username = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM akun WHERE username='$_POST[username]'
+		OR email='$_POST[email]' "));
 			if ($pemeriksaan_username > 0 ) {
 				echo "<h2> Akun dengan username/email yang sama telah terdaftar, silahkan ubah username/email anda! </h2>";
 			} else{

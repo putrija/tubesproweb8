@@ -47,19 +47,6 @@ error_reporting(0);
     <?php 
     if(isset($_POST['btnlogin']))
     {
-        // $hash = '$2y$10$qdpMsyUvL2DX1PfWCDvWYORP0e/CdWjMJMdw/Ym5g9zcHiBYZqg2a';
-        // $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        // if(password_verify($_POST['password'], $hash)){
-        //     echo "password is correct";
-        //     echo "<br>";
-        // }
-        // else{
-        //     echo "password is incorrect";
-        //     echo "<br>";
-        // }
-        // echo "Hash = $hash";
-        // echo "<br>";
-        // echo "Hasil Hash = $password";
 
         require ("../koneksi.php");
         $user_login=$_POST['username'];

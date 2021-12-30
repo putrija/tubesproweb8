@@ -17,7 +17,7 @@ while ($pecah = $ambil -> fetch_assoc()) { ?>
             <div class="card-body">
                 <h3 class="card-title"><?php echo $pecah['username'] ?></h3>
                 <p class="card-text"><?php echo $pecah['isi'] ?></p>
-                <a href="saran.php?id=<?php echo $pecah['id'] ?>&balas=true" class="btn btn-primary">Lihat</a>
+                <a href="saran.php?id=<?php echo $pecah['id'] ?>&balas=true" class="btn btn-secondary" style="text-decoration: none;">Lihat</a>
             </div>
             <?php if(isset($_GET['balas'])): ?>
             <?php if($_GET['id'] == $pecah['id']): ?>
@@ -48,7 +48,8 @@ while ($pecah = $ambil -> fetch_assoc()) { ?>
                 <div class="table-responsive mt-5">
                     <form action="" method="post">
                         <textarea style="height: 50px;" placeholder="Masukkan Saran" name="isi" id="isi" class="form-control" rows="10"></textarea>
-                        <button name="kirim" class="btn btn-primary" type="submit">Kirim</button>
+                        <br/>
+                        <button name="kirim" class="btn btn-secondary" type="submit">Kirim</button>
                     </form>
                 </div>
 

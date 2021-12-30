@@ -17,7 +17,7 @@ while ($pecah = $ambil -> fetch_assoc()) { ?>
             <div class="card-body">
                 <h3 class="card-title"><?php echo $pecah['username'] ?></h3>
                 <p class="card-text"><?php echo $pecah['isi'] ?></p>
-                <a href="saran.php?id=<?php echo $pecah['id'] ?>&balas=true" class="btn btn-primary">Lihat</a>
+                <a href="saran.php?id=<?php echo $pecah['id'] ?>&balas=true" class="btn btn-secondary" style="text-decoration: none;">Lihat</a>
             </div>
             <?php if(isset($_GET['balas'])): ?>
             <?php if($_GET['id'] == $pecah['id']): ?>

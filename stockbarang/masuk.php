@@ -118,6 +118,23 @@
             </table>
         </div>
 
+        <div class="table-responsive mt-5">
+            <form action="" method="post">
+                <textarea placeholder="Masukkan Saran" name="isi" id="isi" class="form-control" rows="10"></textarea>
+                <br/>
+                <button name="kirim" class="btn btn-secondary" type="submit">Kirim</button>
+            </form>
+        </div>
+
+        <?php 
+            if(isset($_POST['kirim'])){
+                $isi = $_POST['isi'];
+                $iduser = $_SESSION['iduser'];
+                $koneksi->query("INSERT INTO saran (iduser, isi) VALUES ('$iduser', '$isi')");
+                echo "<meta http-equiv='refresh' content='0;url=masuk.php'>";
+            }
+        
+        ?>
 
     </div>
 </div>

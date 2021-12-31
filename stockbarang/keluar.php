@@ -39,7 +39,7 @@
                                                     <td><?=$tanggal?></td>
                                                     <td><?=$namabarang;?></td>
                                                     <td><?=$kuantitas;?></td>
-                                                    <td><?php echo "$_SESSION[username]";?></td>
+                                                    <td><?=$penerima;?></td>
                                                     <?php if($_SESSION['level'] == 'admin'){ ?>
                                                     <td> 
                                                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idkeluar?>">
@@ -67,7 +67,7 @@
                                                     <!-- Modal body -->
                                                     <form method="POST">
                                                     <div class="modal-body">
-                                                        <input type="text" name="penerima" value="<?=$penerima;?>" class="form-control"  required>
+                                                        <input type="text" name="penerima" value="<?=$penerima;?>" class="form-control" placeholder="nama penerima"  required>
                                                         <br>
                                                         <input type="number" name="kuantitas" value="<?=$kuantitas;?>" class="form-control"  required>
                                                         <br>
@@ -148,8 +148,11 @@
                     }
                 ?>
             </select>
+
             <br>
             <input type="number" name="kuantitas" placeholder="kuantitas" class="form-control" required>
+            <br>
+            <input type="text" name="penerima" placeholder="Nama Penerima" class="form-control" >
             <br>
             <button type="submit" class="btn btn-primary" name="barangkeluar">Submit</button>
         </div>
